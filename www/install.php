@@ -10,7 +10,7 @@ return $pass;
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
 <link href="/files/css/styles.css" rel="stylesheet">
 <link href="/files/favicon.ico" type="image/x-icon" rel="shortcut icon">
-<title>GoldScript | Инсталляция</title>
+<title>SWEEPSTARTS | Инсталляция</title>
 </head>
 <body>
 <table width="100%" height="100%">
@@ -599,7 +599,7 @@ if(!$_GET['action'] || ($_GET['action'] == "install" && $error)) {
 	</tr>
 	<tr height="25">
 		<td align="center">
-			<font color="#999999">&copy; <?php print date(Y); ?> <a href="http://goldscript.ru/" target="_blank">GoldScript</a></font>
+			<font color="#999999">&copy; <?php print date(Y); ?> <a href="#" target="_blank">SWEEPSTARTS</a></font>
 		</td>
 	</tr>
 </table>

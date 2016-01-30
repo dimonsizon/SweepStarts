@@ -2,7 +2,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
 <link href="/files/favicon.ico" type="image/x-icon" rel="shortcut icon" />
-<title>GoldScript || Ошибка соединения с БД</title>
+<title>SWEEPSTARTS || Ошибка соединения с БД</title>
 <meta name="keywords" content="Ошибка соединения с БД" />
 <meta name="description" content="Ошибка соединения с БД" />
 <style type="text/css" rel="stylesheet" />
@@ -41,7 +41,7 @@ Try refreshing the page in a few minutes.
 </p>
 </div>
 <hr size="1" width="53%" align="left"><br />
-&copy; <?php print date(Y); ?> <a href="http://goldscript.ru/" target="_blank" title="HYIP скрипт">GoldScript</a> HYIP CMS
+&copy; <?php print date(Y); ?> <a href="#" target="_blank" title="SWEEPSTARTS">SWEEPSTARTS</a>
 
 </body>
 </html>

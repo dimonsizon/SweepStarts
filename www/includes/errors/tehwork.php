@@ -2,7 +2,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
 <link href="/files/favicon.ico" type="image/x-icon" rel="shortcut icon" />
-<title>GoldScript || Сайт отключен</title>
+<title>SWEEPSTARTS || Сайт отключен</title>
 <meta name="keywords" content="Сайт отключен" />
 <meta name="description" content="Сайт отключен" />
 <style type="text/css" rel="stylesheet" />
@@ -34,7 +34,7 @@ Try refreshing the page in a few minutes.
 </div>
 
 <hr size="1" width="53%" align="left"><br />
-&copy; <?php print date(Y); ?> <a href="http://goldscript.ru/" target="_blank" title="HYIP скрипт">GoldScript</a> HYIP CMS
+&copy; <?php print date(Y); ?> <a href="#" target="_blank" title="SWEEPSTARTS">SWEEPSTARTS</a>
 
 </body>
 </html>

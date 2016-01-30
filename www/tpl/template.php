@@ -96,7 +96,7 @@ if($ref) {
 <div id="footer">
 	<div class="left">
 	Скрипт для создания HYIP фонда<br>
-	&copy; 2014 - <?php print date("Y"); ?> <a href="http://goldscript.ru" target="_blank">GoldScript.ru</a>
+	&copy; 2014 - <?php print date("Y"); ?> <a href="#" target="_blank">SWEEPSTARTS.COM</a>
 	</div>
 	<div class="right">
 		<img src="/img/tpl/paysystems.jpg" width="582" height="28" border="0" alt="">

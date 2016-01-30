@@ -6,7 +6,7 @@ if(($status == 1 || $status == 2) && $login) {
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
-<title>GoldScript || Лицензия «<?php print $cfgURL; ?>»</title>
+<title>SWEEPSTARTS || Лицензия «<?php print $cfgURL; ?>»</title>
 <link href="/files/favicon.ico" type="image/x-icon" rel="shortcut icon" />
 <link href="files/css/styles.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript">
@@ -41,7 +41,7 @@ if(($status == 1 || $status == 2) && $login) {
 <body>
 <div id="wrap">
 	<div id="header">
-		<div class="left"><a href="/admin"><img src="images/logo.png" width="256" height="50" border="0" alt="GoldScript"></a></div>
+		<div class="left"><a href="/admin"><img src="images/logo.png" width="256" height="50" border="0" alt="SWEEPSTARTS"></a></div>
 		<div class="right">
 			<div class="block">
 		Здравствуй, <?php print $login; ?> [#<?php print $user_id; ?>]! IP: <?php print $userip; ?> <img src="/img/flags/<?php print getCOUNTRY($userip); ?>.gif" width="18" height="12" border="0" alt="" /><br />Серверное время: <b><?php print date("d.m.Y"); ?></b> <span id="time"></span><br /><a href="/">Перейти на сайт</a> | <a href="javascript: if(confirm('Вы действительно хотите выйти?')) top.location.href='/logout.php';">Выход</a>
@@ -97,7 +97,7 @@ if(($status == 1 || $status == 2) && $login) {
 ?>
 	</div>
 </div>
-<div id="footer">&copy; 2014 - <?php print date(Y); ?> <a href="http://goldscript.ru" target="_blank">GoldScript</a><br />Все права защищены!</div>
+<div id="footer">&copy; 2014 - <?php print date(Y); ?> <a href="#" target="_blank">SWEEPSTARTS</a><br />Все права защищены!</div>
 </body>
 </html>
 <?php

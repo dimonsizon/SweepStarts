@@ -2,7 +2,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
 <link href="/files/favicon.ico" type="image/x-icon" rel="shortcut icon" />
-<title>GoldScript || Ошибка 404</title>
+<title>SWEEPSTARTS || Ошибка 404</title>
 <meta name="keywords" content="Ошибка 404" />
 <meta name="description" content="Ошибка 404, страница не найдена" />
 <style type="text/css" rel="stylesheet" />
@@ -32,7 +32,7 @@ Try <a href="/">Home</a>, maybe there find the right page.
 </p><br />
 </div>
 <hr size="1" width="53%" align="left"><br />
-&copy; <?php print date(Y); ?> <a href="http://goldscript.ru/" target="_blank" title="HYIP скрипт">GoldScript</a> HYIP CMS
+&copy; <?php print date(Y); ?> <a href="#" target="_blank" title="SWEEPSTARTS">SWEEPSTARTS</a> 
 
 </body>
 </html>
