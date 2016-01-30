@@ -55,10 +55,10 @@ if($ref) {
 					<li><a href="/reviews"><?php print $lang['reviews']; ?></a></li>
 					<li><a href="/support"><?php print $lang['contacts']; ?></a></li>
 				</ul>
-			</div>
+			</nav>
 		</div>
 	</div>
-</div>
+</header>
 <div class="clear"></div>
 <div class="main-container">
 	<div class="clear"></div>

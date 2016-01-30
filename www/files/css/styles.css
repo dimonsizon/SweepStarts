@@ -43,6 +43,7 @@ table, td {
 
 header {
 	background-color: #02b2ff;
+    overflow: hidden;
 }
 
 .circle {
