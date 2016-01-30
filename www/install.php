@@ -8,7 +8,7 @@ return $pass;
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
-<link href="/files/styles.css" rel="stylesheet">
+<link href="/files/css/styles.css" rel="stylesheet">
 <link href="/files/favicon.ico" type="image/x-icon" rel="shortcut icon">
 <title>GoldScript | Инсталляция</title>
 </head>

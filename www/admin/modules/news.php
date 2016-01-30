@@ -7,16 +7,16 @@ if ($_GET['go'] == 'go') {
 	$text_en		 = addslashes($_POST['text_en']);
 
 	if (!$subject) {
-		print '<p class="er">Укажите тему новости!</p>';
+		print '<p class="er">РЈРєР°Р¶РёС‚Рµ С‚РµРјСѓ РЅРѕРІРѕСЃС‚Рё!</p>';
 	} elseif (!$text) {
-		print '<p class="er">Введите текст новости!</p>';
+		print '<p class="er">Р’РІРµРґРёС‚Рµ С‚РµРєСЃС‚ РЅРѕРІРѕСЃС‚Рё!</p>';
 	} else {
 
 		$now	=  date('d.m.Y');
 		$sql	= "INSERT INTO `news` (`subject`, `msg`, `date`, `subject_en`, `msg_en`) values ('".$subject."', '".$text."', '".$now."', '".$subject_en."', '".$text_en."')";
 		$result	= mysql_query($sql);
 
-		print '<p class="erok">Новость добавлена!</p>';
+		print '<p class="erok">РќРѕРІРѕСЃС‚СЊ РґРѕР±Р°РІР»РµРЅР°!</p>';
 
 	}
 }
@@ -39,7 +39,7 @@ if ($_GET['go'] == 'go') {
 		theme_advanced_statusbar_location : "bottom",
 		theme_advanced_resizing : true,
 
-		content_css : "/files/styles.css",
+		content_css : "/files/css/styles.css",
 
 		template_external_list_url : "lists/template_list.js",
 		external_link_list_url : "lists/link_list.js",
@@ -53,11 +53,11 @@ if ($_GET['go'] == 'go') {
 	});
 </script>
 <FIELDSET style="border: solid #666666 1px;">
-<LEGEND><b>Добавить новость</b></LEGEND>
+<LEGEND><b>Р”РѕР±Р°РІРёС‚СЊ РЅРѕРІРѕСЃС‚СЊ</b></LEGEND>
 <form action="?p=news&go=go" method="post" name="mainForm">
 <table bgcolor="#eeeeee" width="612" align="center" border="0" style="border: solid #cccccc 1px; width: 612px;">
 	<tr>
-		<td style="padding-left: 2px;">Тема&nbsp;новости:</td>
+		<td style="padding-left: 2px;">РўРµРјР°&nbsp;РЅРѕРІРѕСЃС‚Рё:</td>
 		<td align="right"><input style="width: 490px;" type="text" name="subject" size="97" /></td>
 	</tr>
 	<tr>
@@ -69,10 +69,10 @@ if ($_GET['go'] == 'go') {
 		<td colspan="2" height="3" bgcolor="#cccccc"></td>
 	</tr>
 	<tr>
-		<td colspan="2" height="30" align="center">Английская версия</td>
+		<td colspan="2" height="30" align="center">РђРЅРіР»РёР№СЃРєР°СЏ РІРµСЂСЃРёСЏ</td>
 	</tr>
 	<tr>
-		<td style="padding-left: 2px;">Тема&nbsp;новости:</td>
+		<td style="padding-left: 2px;">РўРµРјР°&nbsp;РЅРѕРІРѕСЃС‚Рё:</td>
 		<td align="right"><input style="width: 490px;" type="text" name="subject_en" size="97" /></td>
 	</tr>
 	<tr>
@@ -83,7 +83,7 @@ if ($_GET['go'] == 'go') {
 </table>
 <table align="center" width="624" border="0">
 	<tr>
-		<td align="right"><input type="submit" value="Опубликовать!" /></td>
+		<td align="right"><input type="submit" value="РћРїСѓР±Р»РёРєРѕРІР°С‚СЊ!" /></td>
 	</tr>
 </table>
 </form>

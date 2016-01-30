@@ -8,7 +8,7 @@ if(($status == 1 || $status == 2) && $login) {
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
 <title>GoldScript || Лицензия «<?php print $cfgURL; ?>»</title>
 <link href="/files/favicon.ico" type="image/x-icon" rel="shortcut icon" />
-<link href="files/styles.css" rel="stylesheet" type="text/css" />
+<link href="files/css/styles.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript">
 <!--
 	var h=<?php print intval(date('G')); ?>;

@@ -3,9 +3,9 @@ defined('ACCESS') or die();
 if ($_GET['action'] == 'save') {
 	$sql = "UPDATE `answers` SET answer = '".addslashes($_POST['text'])."' WHERE id = ".intval($_GET['id'])." LIMIT 1";
  	if (mysql_query($sql)) {
-		print '<p class="erok">Комментарий администратора был успешно обновлён!</p>';
+		print '<p class="erok">пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!</p>';
 	} else {
-		print '<p class="er">Произошла ошибка при записи данных в БД</p>';
+		print '<p class="er">пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅ</p>';
 	}
 }
 
@@ -33,7 +33,7 @@ if (isset($_GET['id'])) {
 		theme_advanced_statusbar_location : "bottom",
 		theme_advanced_resizing : true,
 
-		content_css : "/files/styles.css",
+		content_css : "/files/css/styles.css",
 
 		template_external_list_url : "lists/template_list.js",
 		external_link_list_url : "lists/link_list.js",
@@ -47,7 +47,7 @@ if (isset($_GET['id'])) {
 	});
 </script>
 <FIELDSET>
-<LEGEND><b>Редактирование комментария к отзыву:</b></LEGEND>
+<LEGEND><b>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ:</b></LEGEND>
 <table bgcolor="#eeeeee" width="612" align="center" border="0" style="border: solid #cccccc 1px; width: 612px;">
 <form action="?p=admin_answers&action=save&id=<?php print intval($_GET['id']); ?>" method="post" name="mainForm">
 <td>
@@ -56,13 +56,13 @@ if (isset($_GET['id'])) {
 </table>
 <table align="center" width="624" border="0">
 	<tr>
-		<td align="right"><input type="image" src="images/save.png" width="24" height="24" border="0" title="Сохранить!" /></td>
+		<td align="right"><input type="image" src="images/save.png" width="24" height="24" border="0" title="пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!" /></td>
 	</tr>
 </table>
 </form>
 </FIELDSET>
 <?php
 } else {
-	print '<p class="er">Номер записи не задан!</p>';
+	print '<p class="er">пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ!</p>';
 }
 ?>
