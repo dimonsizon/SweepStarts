@@ -36,7 +36,7 @@ if (isset($_GET['id'])) {
 		theme_advanced_statusbar_location : "bottom",
 		theme_advanced_resizing : true,
 
-		content_css : "/files/styles.css",
+		content_css : "/files/css/styles.css",
 
 		template_external_list_url : "lists/template_list.js",
 		external_link_list_url : "lists/link_list.js",
