@@ -1,0 +1,60 @@
+﻿.logo {
+    margin-top: 14px;
+    float: left;
+}
+
+.nav-bar {
+	
+}
+
+    .nav-bar ul {
+	    list-style: none;
+	    margin: 0 0 0 0px;
+    }
+
+        .nav-bar li {
+	        float: left;
+	        position: relative;
+	        display: block;
+	        z-index: 4;
+        }
+
+            .nav-bar li a {
+                padding: 10px 25px;	            
+	            height: 40px;
+	            line-height: 40px;	            
+	            color: #fff;
+	            font-size: 16px;
+                text-align: center;
+                display: block;
+                border-bottom: 3px solid transparent;
+            }
+
+            .nav-bar li a:hover {
+                color: #fff;
+                border: none;
+                background-color: transparent;
+                border-bottom: 3px solid #fff;
+            }
+
+/******************Account menu********************/
+.authmenu {
+	margin-top: 7px;
+	padding: 10px;
+	border-radius: 4px;
+	background-color: #16a086;
+}
+.authmenu:hover {
+	margin-top: 7px;
+	padding: 10px;
+	border-radius: 4px;
+	background-color: #2680bc;
+}
+.authmenu a {
+	text-decoration: none;
+	font-weight: bold;
+	padding-left: 20px;
+	background: url('/img/tpl/authmenu.png') no-repeat left;
+	font-size: 14px;
+	color: #ffffff;
+}

@@ -16,10 +16,16 @@
 body {
 	margin: 0;
 	padding: 0;
-	background-color: #ffffff;
+	background-color: #fff;
 	height: 100%;
 	font: 12px RobotoRegular;
 }
+
+.container {
+    margin: 0 auto;
+    width: 970px;
+}
+
 table, td {
 	font: 11px RobotoRegular;
 }
@@ -28,16 +34,17 @@ table, td {
 }
 .left {
 	float: left;
-	margin-bottom: 1px;
+	/*margin-bottom: 1px;*/
 }
 .right {
 	float: right;
-	margin-bottom: 1px;
+	/*margin-bottom: 1px;*/
 }
-#header {
-	margin: 0 auto;
-	width: 990px;
+
+header {
+	background-color: #02b2ff;
 }
+
 .circle {
 	background: url("/img/tpl/head_krug.jpg") no-repeat top center;
 	width: 117px;
@@ -55,16 +62,8 @@ table, td {
 	font-size: 21px;
 	padding-left: 22px;
 }
-#menu {
-	margin-top: 15px;
-	width: 800px;
-	height: 40px;
-	background-color: #2680bc;
-	border-radius: 8px;
-	text-align: center;
-}
+
 #cont {
-	margin-top: 15px;
 	padding: 20px;
 	background-color: #ecf0f1;
 	min-height: 500px;
@@ -132,8 +131,9 @@ input[type="submit"]:hover, input[type="button"]:hover {
 	background-color: #16a086;
 }
 a {
-	color: #2680bc;
-	text-decoration: underline;
+	color: #02b2ff;
+    cursor: pointer;
+	text-decoration: none;
 }
 a:hover {
 	color: #2680bc;
@@ -159,63 +159,14 @@ h4 {
 .br {
 	height: 25px;
 }
-#menu ul {
-	list-style: none;
-	margin: 0 0 0 0px;
-	padding: 0 0 0 40px;
-	text-align: center;
-}
-#menu li {
-	float: left;
-	position: relative;
-	display: block;
-	margin: 0px;
-	z-index: 5;
-	text-align: center;
-}
-#menu li a {
-	display: block;
-	text-shadow: #333333 1px 1px 2px;
-	height: 40px;
-	line-height: 40px;
-	text-decoration: none;
-	text-align: center;
-	color: #ffffff;
-	font-weight: bold;
-	font-size: 16px;
-	padding-left: 35px;
-	padding-right: 35px;
-}
-#menu li a:hover {
-	background: url('/img/tpl/amenu.gif') repeat-x center;
-	text-shadow: none;
-}
+
 .depoico {
 	border: 2px solid #cccccc; 
 	border-radius: 3px; 
 	margin-right: 10px; 
 	max-width: 70px;
 }
-.authmenu {
-	margin-top: 7px;
-	padding: 10px;
-	border-radius: 4px;
-	background-color: #16a086;
-}
-.authmenu:hover {
-	margin-top: 7px;
-	padding: 10px;
-	border-radius: 4px;
-	background-color: #2680bc;
-}
-.authmenu a {
-	text-decoration: none;
-	font-weight: bold;
-	padding-left: 20px;
-	background: url('/img/tpl/authmenu.png') no-repeat left;
-	font-size: 14px;
-	color: #ffffff;
-}
+
 .er {
 	text-align: center; 
 	color: #cc0000; 

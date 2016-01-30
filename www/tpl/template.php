@@ -36,23 +36,26 @@ if($ref) {
 	<meta name="keywords" content="<?php print $keywords; ?>" />
 	<meta name="description" content="<?php print $description; ?>" />
 	<link href="/files/css/styles.css" type="text/css" rel="stylesheet" />
+	<link href="/files/css/menu.css" type="text/css" rel="stylesheet" />
 	<script language="javascript" src="/files/scripts.js"></script>
 </head>
 <body>
-<div id="header">
-	<div class="left">
-		<a class="logo" href="/"><img src="/img/tpl/logo.png" border="0" alt="SWEEPSTARTS"></a>
-	</div>
+<header id="header">
+	<div class="container">
+		<div class="logo">
+			<a href="/"><img src="/img/tpl/logo.png" border="0" alt="SWEEPSTARTS"></a>
+		</div>
 	
-	<div class="right">
-		<div id="menu">
-			<ul>
-				<li><a href="/"><?php print $lang['homepage']; ?></a></li>
-				<li><a href="/rules"><?php print $lang['rules']; ?></a></li>
-				<li><a href="/news"><?php print $lang['news']; ?></a></li>
-				<li><a href="/reviews"><?php print $lang['reviews']; ?></a></li>
-				<li><a href="/support"><?php print $lang['contacts']; ?></a></li>
-			</ul>
+		<div class="right">
+			<nav id="menu" class="nav-bar">
+				<ul>
+					<li><a href="/"><?php print $lang['homepage']; ?></a></li>
+					<li><a href="/rules"><?php print $lang['rules']; ?></a></li>
+					<li><a href="/news"><?php print $lang['news']; ?></a></li>
+					<li><a href="/reviews"><?php print $lang['reviews']; ?></a></li>
+					<li><a href="/support"><?php print $lang['contacts']; ?></a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
 </div>
