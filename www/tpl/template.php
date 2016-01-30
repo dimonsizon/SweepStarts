@@ -35,7 +35,7 @@ if($ref) {
 <title><?php print $title; ?></title>
 <meta name="keywords" content="<?php print $keywords; ?>" />
 <meta name="description" content="<?php print $description; ?>" />
-<link href="/files/styles.css" type="text/css" rel="stylesheet" />
+<link href="/files/css/styles.css" type="text/css" rel="stylesheet" />
 <script language="javascript" src="/files/scripts.js"></script>
 </head>
 <body>
