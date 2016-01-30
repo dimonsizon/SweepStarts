@@ -73,11 +73,6 @@ if($ref) {
 				<h3><?php print $lang['stat']; ?></h3>
 				<?php include "tpl/stat.php"; ?>
 			</div>
-			<div class="br"></div>
-			<div class="block">
-				<h3><?php print $lang['skypechat']; ?></h3>
-				<center><a href="skype:?chat&blob=rIy1eU2BxAFVDlaZtpIa1BDArzy1FRne_5F_S22A_Gx8VKE_D2oFNjMB8cBYFE4kjqPdD6GQph_avQ"><img src="/img/tpl/skypechat.png" width="200" height="200" border="0" alt="Skype"></a></center>
-			</div>
 		</div>
 		<div class="right">
 			<div class="block" style="width: 650px;">
@@ -97,19 +92,17 @@ if($ref) {
 	<div class="clear"></div>
 </div>
 <div id="footer">
-	<div class="left">
-	Скрипт для создания HYIP фонда<br>
-	&copy; 2014 - <?php print date("Y"); ?> <a href="#" target="_blank">SWEEPSTARTS.COM</a>
-	</div>
-	<div class="right">
-		<img src="/img/tpl/paysystems.jpg" width="582" height="28" border="0" alt="">
-	</div>
-	<div class="right">		
-		<div class="languages-block">
-			<a href="<?php if($page) { print "/".$page; } ?>/?lang=en"><img src="/img/us_ico.gif" width="18" height="12" border="0" alt="English" title="English"></a>
-			<a href="<?php if($page) { print "/".$page; } ?>/?lang=ru"><img src="/img/ru_ico.gif" width="18" height="12" border="0" alt="Русский" title="Русский"></a>
+	<div class="container">
+		<div class="left">
+		&copy; <?php print date("Y"); ?> <a href="#" target="_blank">SWEEPSTARTS</a> Краудфандинговая платформа 
+		</div>	
+		<div class="right">		
+			<div class="languages-block">
+				<a href="<?php if($page) { print "/".$page; } ?>/?lang=en"><img src="/img/us_ico.gif" width="18" height="12" border="0" alt="English" title="English"></a>
+				<a href="<?php if($page) { print "/".$page; } ?>/?lang=ru"><img src="/img/ru_ico.gif" width="18" height="12" border="0" alt="Русский" title="Русский"></a>
+			</div>
 		</div>
-	</div>
+	</div>	
 </div>
 <div class="br"></div>
 </body>
