@@ -60,9 +60,9 @@ if($ref) {
 	</div>
 </div>
 <div class="clear"></div>
-<div id="cont">
+<div class="main-container">
 	<div class="clear"></div>
-	<div id="content">
+	<div class="container">
 		<div class="left" style="width: 250px;">
 			<div class="block">
 				<h3><?php print $lang['auth']; ?></h3>

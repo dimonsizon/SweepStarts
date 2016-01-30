@@ -63,15 +63,12 @@ header {
 	padding-left: 22px;
 }
 
-#cont {
+.main-container {
 	padding: 20px;
 	background-color: #ecf0f1;
 	min-height: 500px;
 }
-#content {
-	margin: 0 auto;
-	width: 970px;
-}
+
 .block {
 	background: url("/img/tpl/block.gif") repeat-x left bottom #ffffff;
 	border-radius: 3px;
