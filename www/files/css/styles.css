@@ -1,13 +1,27 @@
+@font-face {
+    font-family: RobotoLight;
+    src: url(/fonts/roboto/Roboto-Light.ttf); 
+}
+
+@font-face {
+    font-family: RobotoMedium;
+    src: url(/fonts/roboto/Roboto-Medium.ttf);
+}
+
+@font-face {
+    font-family: RobotoRegular;
+    src: url(/fonts/roboto/Roboto-Regular.ttf); 
+}
+
 body {
 	margin: 0;
 	padding: 0;
 	background-color: #ffffff;
 	height: 100%;
-	font: 12px Tahoma, Verdana, Arial, Helvetica, sans-serif;
-	#text-align: center;
+	font: 12px RobotoRegular;
 }
 table, td {
-	font: 11px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font: 11px RobotoRegular;
 }
 .clear {
 	clear: both;
@@ -24,7 +38,7 @@ table, td {
 	margin: 0 auto;
 	width: 990px;
 }
-.krug {
+.circle {
 	background: url("/img/tpl/head_krug.jpg") no-repeat top center;
 	width: 117px;
 	height: 93px;
@@ -37,7 +51,7 @@ table, td {
 	font-weight: bold;
 }
 
-.krug span {
+.circle span {
 	font-size: 21px;
 	padding-left: 22px;
 }
@@ -64,7 +78,7 @@ table, td {
 	border-radius: 3px;
 	padding: 15px 15px 25px 15px;
 }
-.flags {
+.languages-block {
 	float: right;
 	padding-top: 45px;
 	padding-right: 45px;

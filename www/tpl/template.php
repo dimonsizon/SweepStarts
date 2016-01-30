@@ -40,12 +40,14 @@ if($ref) {
 </head>
 <body>
 <div id="header">
-	<div class="left"><a href="/"><img src="/img/tpl/logo.jpg" width="163" height="139" border="0" alt="GoldScript"></a></div>
+	<div class="left">
+		<a class="logo" href="/"><img src="/img/tpl/logo.jpg" width="163" height="139" border="0" alt="GoldScript"></a>
+	</div>
 	<div class="right">
-		<div class="krug"><br><?php print $lang['activeusers']; ?><br /><span style="background: url('/img/tpl/users_ico.gif') no-repeat left;"><?php print $cusers; ?></span></div>
-		<div class="krug"><br><?php print $lang['deposits']; ?><br /><span style="background: url('/img/tpl/deposits_ico.gif') no-repeat left;"><?php print $depmoney; ?></span></div>
-		<div class="krug"><br><?php print $lang['payouts']; ?><br /><span style="background: url('/img/tpl/payout_ico.gif') no-repeat left;"><?php print $money; ?></span></div>
-		<div class="flags">
+		<div class="circle"><br><?php print $lang['activeusers']; ?><br /><span style="background: url('/img/tpl/users_ico.gif') no-repeat left;"><?php print $cusers; ?></span></div>
+		<div class="circle"><br><?php print $lang['deposits']; ?><br /><span style="background: url('/img/tpl/deposits_ico.gif') no-repeat left;"><?php print $depmoney; ?></span></div>
+		<div class="circle"><br><?php print $lang['payouts']; ?><br /><span style="background: url('/img/tpl/payout_ico.gif') no-repeat left;"><?php print $money; ?></span></div>
+		<div class="languages-block">
 			<a href="<?php if($page) { print "/".$page; } ?>/?lang=en"><img src="/img/us_ico.gif" width="18" height="12" border="0" alt="English" title="English"></a>
 			<a href="<?php if($page) { print "/".$page; } ?>/?lang=ru"><img src="/img/ru_ico.gif" width="18" height="12" border="0" alt="Русский" title="Русский"></a>
 		</div>
