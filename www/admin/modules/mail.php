@@ -12,7 +12,7 @@ $tick		= intval($_POST['tick']);
 	$headers .= "Content-Type: text/html; charset=windows-1251\n";
 
 	if($_POST['to'] == 1) {
-		// РѕС‚РїСЂР°РІР»СЏРµРј РёРЅРІРµСЃС‚РѕСЂР°Рј
+		// отправляем инвесторам
 		$query	= "SELECT `user_id` FROM `deposits` WHERE bot = 0 GROUP BY user_id";
 		$result	= mysql_query($query);
 		while($row = mysql_fetch_array($result)) {
@@ -29,7 +29,7 @@ $tick		= intval($_POST['tick']);
 		}
 
 	} elseif($_POST['to'] == 2) {
-		// РѕР¶РёРґР°РЅРёРµ РѕРїР»Р°С‚С‹
+		// ожидание оплаты
 		$query	= "SELECT `login` FROM `enter` WHERE status = 1 GROUP BY login";
 		$result	= mysql_query($query);
 		while($row = mysql_fetch_array($result)) {
@@ -46,7 +46,7 @@ $tick		= intval($_POST['tick']);
 		}
 
 	} elseif($_POST['to'] == 3) {
-		// РІ РїСЂРѕС†РµСЃСЃРµ РѕРїР»Р°С‚С‹
+		// в процессе оплаты
 		$query	= "SELECT `login` FROM `enter` WHERE status = 0 GROUP BY login";
 		$result	= mysql_query($query);
 		while($row = mysql_fetch_array($result)) {
@@ -78,7 +78,7 @@ $tick		= intval($_POST['tick']);
 	}
 
 
-print "<p class=\"erok\">Р Р°СЃСЃС‹Р»РєР° РґРѕСЃС‚Р°РІР»РµРЅР° РІСЃРµРј РїРѕР»СЊР·РѕРІР°С‚РµР»СЏРј!</p>";
+print "<p class=\"erok\">Рассылка доставлена всем пользователям!</p>";
 }
 ?>
 <script type="text/javascript" src="editor/tiny_mce_src.js"></script>
@@ -99,7 +99,7 @@ print "<p class=\"erok\">Р Р°СЃСЃС‹Р»РєР° РґРѕСЃС‚Р°РІР»РµРЅР° РІСЃРµРј РїРѕР»СЊ
 		theme_advanced_statusbar_location : "bottom",
 		theme_advanced_resizing : true,
 
-		content_css : "/files/css/styles.css",
+		content_css : "/files/styles.css",
 
 		template_external_list_url : "lists/template_list.js",
 		external_link_list_url : "lists/link_list.js",
@@ -113,22 +113,22 @@ print "<p class=\"erok\">Р Р°СЃСЃС‹Р»РєР° РґРѕСЃС‚Р°РІР»РµРЅР° РІСЃРµРј РїРѕР»СЊ
 	});
 </script>
 <FIELDSET>
-<LEGEND><b>Р Р°СЃСЃС‹Р»РєР° СЃРѕРѕР±С‰РµРЅРёСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏРј</b></LEGEND>
+<LEGEND><b>Рассылка сообщения пользователям</b></LEGEND>
 <form action="?p=mail&go=mailto" method="post" name="mainForm">
 <table bgcolor="#eeeeee" width="612" align="center" border="0" style="border: solid #cccccc 1px; width: 612px;">
-<tr><td align="center"><input style="width: 605px;" size="97" name="subject" value="Р Р°СЃСЃС‹Р»РєР° РїСЂРѕРµРєС‚Р° <?php print $cfgURL; ?>" type="text" maxlength="100"></td></tr>
+<tr><td align="center"><input style="width: 605px;" size="97" name="subject" value="Рассылка проекта <?php print $cfgURL; ?>" type="text" maxlength="100"></td></tr>
 <tr><td align="center"><select style="width: 605px;" name="to">
-	<option value="0">РћС‚РїСЂР°РІРёС‚СЊ РІСЃРµРј РїРѕР»СЊР·РѕРІР°С‚РµР»СЏРј</option>
-	<option value="1">РћС‚РїСЂР°РІРёС‚СЊ РёРЅРІРµСЃС‚РѕСЂР°Рј</option>
-	<option value="2">РћС‚РїСЂР°РІРёС‚СЊ РІ РѕР¶РёРґР°РЅРёРё РѕРїР»Р°С‚С‹</option>
-	<option value="3">РћС‚РїСЂР°РІРёС‚СЊ РІ РїСЂРѕС†РµСЃСЃРµ РѕРїР»Р°С‚С‹</option>
+	<option value="0">Отправить всем пользователям</option>
+	<option value="1">Отправить инвесторам</option>
+	<option value="2">Отправить в ожидании оплаты</option>
+	<option value="3">Отправить в процессе оплаты</option>
 </select></td></tr>
 <tr><td align="center" style="padding-bottom: 10px;"><textarea id="elm1" style="width: 605px;" name="msg" cols="103" rows="20"></textarea></td></tr>
 </table>
 <table align="center" width="624" border="0">
 	<tr>
-		<td><label><input type="checkbox" name="tick" value="1"> <b>РћС‚РїСЂР°РІРёС‚СЊ РІ С‚РёРєРµС‚С‹</b></label></td>
-		<td align="right"><input type="submit" value="РћС‚РїСЂР°РІРёС‚СЊ!" /></td>
+		<td><label><input type="checkbox" name="tick" value="1"> <b>Отправить в тикеты</b></label></td>
+		<td align="right"><input type="submit" value="Отправить!" /></td>
 	</tr>
 </table>
 </form>

@@ -7,9 +7,9 @@ if ($action == 'save') {
 
 	$sql = "UPDATE answers SET text = '".$text."', yes = '".$radi."', view = ".intval($_POST['view'])." WHERE id = ".intval($_GET['id'])." LIMIT 1";
 	if (mysql_query($sql)) {
-		print "<p class=\"erok\">Р—Р°РїРёСЃСЊ РѕР±РЅРѕРІР»РµРЅР°!</p>";
+		print "<p class=\"erok\">Запись обновлена!</p>";
 	} else {
-		print "<p class=\"er\">РџСЂРѕРёР·РѕС€Р»Р° РѕС€РёР±РєР° РїСЂРё Р·Р°РїРёСЃРё РґР°РЅРЅС‹С… РІ Р‘Р”</p>";
+		print "<p class=\"er\">Произошла ошибка при записи данных в БД</p>";
 	}
 }
 
@@ -36,7 +36,7 @@ if (isset($_GET['id'])) {
 		theme_advanced_statusbar_location : "bottom",
 		theme_advanced_resizing : true,
 
-		content_css : "/files/css/styles.css",
+		content_css : "/files/styles.css",
 
 		template_external_list_url : "lists/template_list.js",
 		external_link_list_url : "lists/link_list.js",
@@ -50,7 +50,7 @@ if (isset($_GET['id'])) {
 	});
 </script>
 <FIELDSET style="border: solid #666666 1px;">
-<LEGEND><b>Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ РѕС‚Р·С‹РІР°:</b></LEGEND>
+<LEGEND><b>Редактирование отзыва:</b></LEGEND>
 <form action="?p=edit_answers&action=save&id=<?php print $_GET['id']; ?>" method="post" name="mainForm">
 <table bgcolor="#eeeeee" width="612" align="center" border="0" style="border: solid #cccccc 1px; width: 612px;">
 <tr>
@@ -58,15 +58,15 @@ if (isset($_GET['id'])) {
 </tr>
 <tr>
 	<td align="center">
-		<input type="radio" name="radio" value="1" <?php if ($a['yes'] == 1) echo 'checked'; ?> /> <img src="/img/yes.png" width="16" height="16" border="0" alt="РџРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Р№ РѕС‚Р·С‹РІ" /> 
-		<input type="radio" name="radio" value="2" <?php if ($a['yes'] == 2) echo 'checked'; ?> /> <img src="/img/no.png" width="16" height="16" border="0" alt="РћС‚СЂРёС†Р°С‚РµР»СЊРЅС‹Р№ РѕС‚Р·С‹РІ" />
-		<input type="checkbox" name="view" value="1" <?php if ($a['view'] == 1) echo 'checked="checked"'; ?> /> <b>РІС‹РІРѕРґРёС‚СЊ</b>
+		<input type="radio" name="radio" value="1" <?php if ($a['yes'] == 1) echo 'checked'; ?> /> <img src="/img/yes.png" width="16" height="16" border="0" alt="Положительный отзыв" /> 
+		<input type="radio" name="radio" value="2" <?php if ($a['yes'] == 2) echo 'checked'; ?> /> <img src="/img/no.png" width="16" height="16" border="0" alt="Отрицательный отзыв" />
+		<input type="checkbox" name="view" value="1" <?php if ($a['view'] == 1) echo 'checked="checked"'; ?> /> <b>выводить</b>
 	</td>
 </tr>
 </table>
 <table align="center" width="624" border="0">
 	<tr>
-		<td align="right"><input type="image" src="images/save.png" width="24" height="24" border="0" title="РЎРѕС…СЂР°РЅРёС‚СЊ!" /></td>
+		<td align="right"><input type="image" src="images/save.png" width="24" height="24" border="0" title="Сохранить!" /></td>
 	</tr>
 </table>
 </form>

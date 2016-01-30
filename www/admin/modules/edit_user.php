@@ -18,17 +18,17 @@ if($_GET[action] == "add") {
 		if($pass == $repass) {
 			mysql_query('UPDATE users SET pass = "'.gs_md5($licKEY, $pass).'" WHERE id = '.intval($_GET['id']).' LIMIT 1');
 		} else {
-			print "<p class=\"er\">РџР°СЂРѕР»СЊ РЅРµ РёР·РјРµРЅС‘РЅ, РёР·-Р·Р° РЅРµСЃРѕРІРїР°РґРµРЅРёСЏ РІРІРµРґС‘РЅРЅС‹С… РїР°СЂРѕР»РµР№!</p>";
+			print "<p class=\"er\">Пароль не изменён, из-за несовпадения введённых паролей!</p>";
 		}
 
 	}
 
 	if($mail) {
 		if(!preg_match("/^[a-z0-9_.-]{1,20}@(([a-z0-9-]+\.)+(com|net|org|mil|edu|gov|arpa|info|biz|[a-z]{2})|[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})$/is",$mail)) {
-			print "<p class=\"er\">Р’РІРµРґРёС‚Рµ РїСЂР°РІРёР»СЊРЅС‹Р№ e-mail!</p>";
+			print "<p class=\"er\">Введите правильный e-mail!</p>";
 		} else {
 			mysql_query('UPDATE users SET mail = "'.$mail.'", comment = "'.$com.'", balance = balance + '.sprintf("%01.2f", $_POST['pmbal']).', bonus = bonus + '.sprintf("%01.2f", $_POST['bonus']).', pm = "'.$pm.'", pe = "'.$pe.'", skype = "'.$skype.'", icq = "'.$icq.'", ref_percent = '.sprintf("%01.2f", $_POST['ref_percent']).' WHERE id = '.intval($_GET['id']).' LIMIT 1');
-			print "<p class=\"erok\">Р”Р°РЅРЅС‹Рµ СЃРѕС…СЂР°РЅРµРЅС‹!</p>";
+			print "<p class=\"erok\">Данные сохранены!</p>";
 
 			if($_POST['pmbal'] != 0.00) {
 				mysql_query('INSERT INTO enter (sum, date, login, status, purse, paysys) VALUES ("'.sprintf("%01.2f", $_POST['pmbal']).'", "'.time().'", "'.$ul.'", 2, "ADMINISTRATOR", "PerfectMoney")');
@@ -36,7 +36,7 @@ if($_GET[action] == "add") {
 
 		}
 	} else {
-		print "<p class=\"er\">РќРµ Р·Р°РїРѕР»РЅРµРЅС‹ РІСЃРµ РїРѕР»СЏ!</p>";
+		print "<p class=\"er\">Не заполнены все поля!</p>";
 	}
 }
 
@@ -62,7 +62,7 @@ $tick		= intval($_POST['tick']);
 				mysql_query("INSERT INTO `msgs` (`from_id`, `from_name`, `to_id`, `date`, `subject`, `text`) VALUES (".$user_id.", '".$login."', ".$row['id'].", ".time().", '".$subject."', '".$msg."')");
 			}
 
-	print "<p class=\"erok\">РЎРѕРѕР±С‰РµРЅРёРµ РѕС‚РїСЂР°РІР»РµРЅРѕ</p>";
+	print "<p class=\"erok\">Сообщение отправлено</p>";
 
 }
 
@@ -82,16 +82,16 @@ $rows = mysql_fetch_array($get_user);
 $country = getCOUNTRY($rows['ip']);
 ?>
 <FIELDSET>
-<LEGEND><b>Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ РґР°РЅРЅС‹С… РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ: <?php print $rows['login']; ?></b> [ <?php print "<img src=\"/img/flags/".$country.".gif\" width=\"18\" height=\"12\" border=\"0\" alt=\"".$country."\" title=\"".$country."\" /> ".$rows['ip']; ?> ]</LEGEND>
+<LEGEND><b>Редактирование данных пользователя: <?php print $rows['login']; ?></b> [ <?php print "<img src=\"/img/flags/".$country.".gif\" width=\"18\" height=\"12\" border=\"0\" alt=\"".$country."\" title=\"".$country."\" /> ".$rows['ip']; ?> ]</LEGEND>
 <form action="?p=edit_user&id=<?php print intval($uid); ?>&action=add" method="post">
 <input type="hidden" name="ul" value="<?php print $rows['login']; ?>" />
 <table align="center" width="630" border="0" cellpadding="3" cellspacing="0" style="border: solid #cccccc 1px;">
 <tr bgcolor="#dddddd">
-	<td><b>РџР°СЂРѕР»СЊ</b>:</td>
+	<td><b>Пароль</b>:</td>
 	<td align="right"><input style="width: 480px;" type="password" name="pass" size="70" maxlength="50" value="" /></td>
 </tr>
 <tr bgcolor="#eeeeee">
-	<td><b>РџР°СЂРѕР»СЊ</b> <small>[РїРѕРІС‚РѕСЂРЅРѕ]</small>:</td>
+	<td><b>Пароль</b> <small>[повторно]</small>:</td>
 	<td align="right"><input style="width: 480px;" type="password" name="re_pass" size="70" maxlength="50" value="" /></td>
 </tr>
 <tr bgcolor="#dddddd">
@@ -107,49 +107,49 @@ $country = getCOUNTRY($rows['ip']);
 	<td align="right"><input style="width: 480px;" type="text" name="icq" size="70" maxlength="20" value="<?php print $icq; ?>" /></td>
 </tr>
 <tr bgcolor="#eeeeee">
-	<td><b>Р‘Р°Р»Р°РЅСЃ</b> [<?php print $pmbal; ?>]:</td>
+	<td><b>Баланс</b> [<?php print $pmbal; ?>]:</td>
 	<td align="right"><input style="width: 480px;" type="text" name="pmbal" size="70" maxlength="30" value="" /></td>
 </tr>
 
 <tr bgcolor="#dddddd">
-	<td><b>Р‘РѕРЅСѓСЃ</b> [<?php print $bonus; ?>]:</td>
+	<td><b>Бонус</b> [<?php print $bonus; ?>]:</td>
 	<td align="right"><input style="width: 480px;" type="text" name="bonus" size="70" maxlength="30" value="" /></td>
 </tr>
 
 <tr bgcolor="#eeeeee">
-	<td><b>РЎС‡РµС‚ PM</b>:</td>
+	<td><b>Счет PM</b>:</td>
 	<td align="right"><input style="width: 480px;" type="text" name="pm" size="70" maxlength="30" value="<?php print $pm; ?>" /></td>
 </tr>
 <tr bgcolor="#dddddd">
-	<td><b>РЎС‡РµС‚ Payeer</b>:</td>
+	<td><b>Счет Payeer</b>:</td>
 	<td align="right"><input style="width: 480px;" type="text" name="pe" size="70" maxlength="30" value="<?php print $pe; ?>" /></td>
 </tr>
 
 <tr bgcolor="#eeeeee">
-	<td><b>Р РµС„РµСЂР°Р»СЊРЅС‹Р№ %</b> <span class="tool"><img src="images/help_ico.png" width="16" height="16" alt="" /><span class="tip">Р’С‹ РјРѕР¶РµС‚Рµ СЌС‚РѕРјСѓ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ СѓСЃС‚Р°РЅРѕРІРёС‚СЊ СѓРЅРёРєР°Р»СЊРЅС‹Р№ РїСЂРѕС†РµРЅС‚ СЂРµС„РµСЂР°Р»СЊРЅС‹С… РѕС‚С‡РёСЃР»РµРЅРёР№. Р•СЃР»Рё СѓСЃС‚Р°РЅРѕРІРёС‚СЊ 0, С‚РѕРіРґР° РµРіРѕ РїСЂРѕС†РµРЅС‚ Р±СѓРґРµС‚ РєР°Рє Рё РґР»СЏ РѕСЃС‚Р°Р»СЊРЅС‹С… РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№.</span></span></td>
+	<td><b>Реферальный %</b> <span class="tool"><img src="images/help_ico.png" width="16" height="16" alt="" /><span class="tip">Вы можете этому пользователю установить уникальный процент реферальных отчислений. Если установить 0, тогда его процент будет как и для остальных пользователей.</span></span></td>
 	<td align="right"><input style="width: 480px;" type="text" name="ref_percent" size="70" maxlength="10" value="<?php print $ref_percent; ?>" /></td>
 </tr>
 <tr bgcolor="#dddddd">
-	<td><b>РљРѕРјРјРµРЅС‚Р°СЂРёР№</b>:</td>
+	<td><b>Комментарий</b>:</td>
 	<td align="right"><input style="width: 480px;" type="text" name="com" size="70" maxlength="150" value="<?php print $com; ?>" /></td>
 </tr>
 </table>
 <table align="center" width="640" border="0">
 	<tr>
-		<td align="right"><input type="submit" value=" РЎРѕС…СЂР°РЅРёС‚СЊ! " /></td>
+		<td align="right"><input type="submit" value=" Сохранить! " /></td>
 	</tr>
 </table>
 </form>
 </FIELDSET>
 <hr />
 <FIELDSET style="border: solid #666666 1px; margin-top: 15px;">
-<LEGEND><b>Р”РµРїРѕР·РёС‚С‹ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ:</b></LEGEND>
+<LEGEND><b>Депозиты пользователя:</b></LEGEND>
 <table class="tbl">
 	<tr>
 		<th width="40"><b>ID</b></th>
-  		<th><b>Р”Р°С‚Р°</b></th>
-		<th><b>РЎСѓРјРјР°</b></th>
-		<th><b>РўР°СЂРёС„РЅС‹Р№ РїР»Р°РЅ</b></th>
+  		<th><b>Дата</b></th>
+		<th><b>Сумма</b></th>
+		<th><b>Тарифный план</b></th>
 	</tr>
 <?php
 
@@ -175,15 +175,15 @@ $country = getCOUNTRY($rows['ip']);
 <hr />
 
 <FIELDSET style="border: solid #666666 1px; margin-top: 15px;">
-<LEGEND><b>РџРѕРїРѕР»РЅРµРЅРёСЏ:</b></LEGEND>
+<LEGEND><b>Пополнения:</b></LEGEND>
 
 <table class="tbl">
 	<tr>
 		<th width="40"><b>ID</b></th>
-  		<th><b>Р”Р°С‚Р°</b></th>
-		<th><b>РЎСѓРјРјР°</b></th>
-		<th width="120"><b>РЎС‡РµС‚</b></th>
-		<th width="100"><b>РЎРёСЃС‚РµРјР°</b></th>
+  		<th><b>Дата</b></th>
+		<th><b>Сумма</b></th>
+		<th width="120"><b>Счет</b></th>
+		<th width="100"><b>Система</b></th>
 	</tr>
 <?php
 
@@ -206,15 +206,15 @@ $country = getCOUNTRY($rows['ip']);
 </FIELDSET>
 <hr />
 <FIELDSET style="margin-top: 15px;">
-<LEGEND><b>Р’С‹РІРѕРґ СЃСЂРµРґСЃС‚РІ:</b></LEGEND>
+<LEGEND><b>Вывод средств:</b></LEGEND>
 
 <table class="tbl">
 	<tr>
 		<th width="40"><b>ID</b></th>
-  		<th><b>Р”Р°С‚Р°</b></th>
-		<th><b>РЎСѓРјРјР°</b></th>
-		<th width="120"><b>РЎС‡РµС‚</b></th>
-		<th width="100"><b>РЎРёСЃС‚РµРјР°</b></th>
+  		<th><b>Дата</b></th>
+		<th><b>Сумма</b></th>
+		<th width="120"><b>Счет</b></th>
+		<th width="100"><b>Система</b></th>
 	</tr>
 <?php
 
@@ -255,13 +255,13 @@ $country = getCOUNTRY($rows['ip']);
 ?>
 <hr />
 <FIELDSET style="margin-top: 15px;">
-<LEGEND><b>Р РµС„РµСЂР°Р»С‹</b> [ <?php print 'Upline: '.$upl; ?> ]</LEGEND>
+<LEGEND><b>Рефералы</b> [ <?php print 'Upline: '.$upl; ?> ]</LEGEND>
 
 <table class="tbl" width="100%">
 <tr>
 	<th width="50"><b>#</b></th>
 	<th class="tdleft"><b>Login:</b></th>
-	<th width="150"><b>Р”РѕС…РѕРґ $:</b></th>
+	<th width="150"><b>Доход $:</b></th>
 </tr>
 <?php
 
@@ -282,7 +282,7 @@ function PrintRef($refid, $i, $c) {
 
 			} else {
 
-				print "<tr><td></td><td class=\"tdleft\" style=\"padding-left: ".$i."0px;\"><font color=\"#999999\">В» ".$a['login']."</font></td><td>-</td></tr>";
+				print "<tr><td></td><td class=\"tdleft\" style=\"padding-left: ".$i."0px;\"><font color=\"#999999\">» ".$a['login']."</font></td><td>-</td></tr>";
 
 				if($i <= $c) {
 					PrintRef($a['id'], intval($i + 1), $c);
@@ -308,10 +308,10 @@ function PrintRef($refid, $i, $c) {
 			$m = $m + $a['ref_money'];
 		}
 
-		print "<tr align=\"center\" bgcolor=\"#dddddd\"><td align=\"right\" colspan=\"2\" style=\"padding: 3px;\"><b>Р’СЃРµРіРѕ:</b></td><td><b>".sprintf("%01.2f", $m)."</b></td></tr>";
+		print "<tr align=\"center\" bgcolor=\"#dddddd\"><td align=\"right\" colspan=\"2\" style=\"padding: 3px;\"><b>Всего:</b></td><td><b>".sprintf("%01.2f", $m)."</b></td></tr>";
 
 	} else {
-		print "<tr bgcolor=\"#ffffff\"><td colspan=\"3\" align=\"center\">РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ РїРѕРєР° РЅРёРєРѕРіРѕ РЅРµ РїСЂРёРіР»Р°СЃРёР»!</td></tr>";
+		print "<tr bgcolor=\"#ffffff\"><td colspan=\"3\" align=\"center\">Пользователь пока никого не пригласил!</td></tr>";
 	}
 
 print '</table>';
@@ -321,13 +321,13 @@ print '</table>';
 
 <hr />
 <FIELDSET style="border: solid #666666 1px; margin-top: 15px;">
-<LEGEND><b>РђРІС‚РѕСЂРёР·Р°С†РёРё Р·Р° РїРѕСЃР»РµРґРЅРёРµ 30 РґРЅРµР№</b></LEGEND>
+<LEGEND><b>Авторизации за последние 30 дней</b></LEGEND>
 
 <table class="tbl">
 <tr>
-	<th width="50%"><strong>Р”Р°С‚Р°</strong></th>
+	<th width="50%"><strong>Дата</strong></th>
 	<th><strong>IP</strong></th>
-	<th><strong>РЎС‚СЂР°РЅР°</strong></th>
+	<th><strong>Страна</strong></th>
 </tr>
 <?php
 $sql	 = "SELECT * FROM logip WHERE user_id = ".intval($uid)." AND date > ".intval(time() - 2592000)." ORDER BY id DESC";
@@ -367,7 +367,7 @@ print "<tr>
 		theme_advanced_statusbar_location : "bottom",
 		theme_advanced_resizing : true,
 
-		content_css : "/files/css/styles.css",
+		content_css : "/files/styles.css",
 
 		template_external_list_url : "lists/template_list.js",
 		external_link_list_url : "lists/link_list.js",
@@ -382,17 +382,17 @@ print "<tr>
 </script>
 
 <FIELDSET style="border: solid #666666 1px; margin-top: 15px;">
-<LEGEND><b>РћС‚РїСЂР°РІРєР° СЃРѕРѕР±С‰РµРЅРёСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ</b></LEGEND>
+<LEGEND><b>Отправка сообщения пользователю</b></LEGEND>
 <form action="?p=edit_user&id=<?php print intval($_GET['id']); ?>&action=mailto" method="post" name="mainForm">
 <table bgcolor="#eeeeee" width="612" align="center" border="0" style="border: solid #cccccc 1px; width: 612px;">
-<tr><td align="center"><input style=" width: 606px;" size="97" name="subject" value="РЎРѕРѕР±С‰РµРЅРёРµ РѕС‚ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР° РїСЂРѕРµРєС‚Р° <?php print $cfgURL; ?>" type="text" maxlength="100"></td></tr>
+<tr><td align="center"><input style=" width: 606px;" size="97" name="subject" value="Сообщение от администратора проекта <?php print $cfgURL; ?>" type="text" maxlength="100"></td></tr>
 <tr><td align="center" style="padding-bottom: 10px;"><textarea id="elm1" style="width: 605px;" name="msg" cols="103" rows="20"></textarea>
 </td></tr>
 </table>
 <table align="center" width="624" border="0">
 	<tr>
-		<td><label><input type="checkbox" name="tick" value="1"> <b>РћС‚РїСЂР°РІРёС‚СЊ РІ С‚РёРєРµС‚С‹</b></label></td>
-		<td align="right"><input type="submit" value=" РћС‚РїСЂР°РІРёС‚СЊ СЃРѕРѕР±С‰РµРЅРёРµ! " /></td>
+		<td><label><input type="checkbox" name="tick" value="1"> <b>Отправить в тикеты</b></label></td>
+		<td align="right"><input type="submit" value=" Отправить сообщение! " /></td>
 	</tr>
 </table>
 </form>

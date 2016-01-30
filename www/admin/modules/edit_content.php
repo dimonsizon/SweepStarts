@@ -14,7 +14,7 @@ if($action == "add") {
 	$description_en	= htmlspecialchars($_POST['description_en'], ENT_QUOTES, '');
 
 	if(!$title) {
-		print "<p class=\"er\">Р—Р°РїРѕР»РЅРёС‚Рµ РїРѕР»СЏ РѕР±СЏР·Р°С‚РµР»СЊРЅС‹Рµ РґР»СЏ Р·Р°РїРѕР»РЅРµРЅРёСЏ!</p>";
+		print "<p class=\"er\">Заполните поля обязательные для заполнения!</p>";
 	} else {
 
 		mysql_query("UPDATE `pages` SET `title` = '".$title."', `body` = '".$body."', `keywords` = '".$keywords."', `description` = '".$description."', `title_en` = '".$title_en."', `body_en` = '".$body_en."', `keywords_en` = '".$keywords_en."', `description_en` = '".$description_en."' WHERE `id` = ".$id." LIMIT 1");
@@ -23,7 +23,7 @@ if($action == "add") {
 			$body			= "";
 			$keywords		= "";
 			$description	= "";
-			print "<p class=\"erok\"><b>РР·РјРµРЅРµРЅРёСЏ СЃРѕС…СЂР°РЅРµРЅС‹!</b></p>";
+			print "<p class=\"erok\"><b>Изменения сохранены!</b></p>";
 	}
 }
 $get_page_info = mysql_query("SELECT * FROM pages WHERE id = ".$id." LIMIT 1");
@@ -39,11 +39,11 @@ $get_page_info = mysql_query("SELECT * FROM pages WHERE id = ".$id." LIMIT 1");
 	 $type				= $row['type'];
 ?>
 <FIELDSET>
-<LEGEND><b>Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ СЃС‚СЂР°РЅРёС†С‹</b></LEGEND>
+<LEGEND><b>Редактирование страницы</b></LEGEND>
 <form action="?p=edit_content&id=<?php print $id; ?>&action=add" method="post">
 <table bgcolor="#eeeeee" width="612" align="center" border="0" style="border: solid #cccccc 1px; width: 612px;">
 	<tr>
-		<td style="padding-left: 2px;"><font color="red"><b>*</b></font> Р—Р°РіРѕР»РѕРІРѕРє:</td>
+		<td style="padding-left: 2px;"><font color="red"><b>*</b></font> Заголовок:</td>
 		<td align="right"><input style="width: 490px;" type="text" name="title" maxlength="50" value="<?php print $title; ?>" /></td>
 	</tr>
 	<?php
@@ -69,7 +69,7 @@ $get_page_info = mysql_query("SELECT * FROM pages WHERE id = ".$id." LIMIT 1");
 		theme_advanced_statusbar_location : "bottom",
 		theme_advanced_resizing : true,
 
-		content_css : "/files/css/styles.css",
+		content_css : "/files/styles.css",
 
 		template_external_list_url : "lists/template_list.js",
 		external_link_list_url : "lists/link_list.js",
@@ -89,21 +89,21 @@ $get_page_info = mysql_query("SELECT * FROM pages WHERE id = ".$id." LIMIT 1");
 	}
 	?>
 	<tr>
-		<td style="padding-left: 2px;">РљР»СЋС‡РµРІС‹Рµ СЃР»РѕРІР°:</td>
+		<td style="padding-left: 2px;">Ключевые слова:</td>
 		<td align="right"><input style="width: 490px;" type="text" name="keywords" maxlength="250" value="<?php print $keywords; ?>" /></td>
 	</tr>
 		<tr>
-		<td style="padding-left: 2px;">РћРїРёСЃР°РЅРёРµ&nbsp;СЃС‚СЂР°РЅРёС†С‹:</td>
+		<td style="padding-left: 2px;">Описание&nbsp;страницы:</td>
 		<td align="right"><input style="width: 490px;" type="text" name="description" maxlength="250" value="<?php print $description; ?>" /></td>
 	</tr>
 	<tr>
 		<td colspan="2" height="3" bgcolor="#cccccc"></td>
 	</tr>
 	<tr>
-		<td colspan="2" align="center" height="30">РђРЅРіР»РёР№СЃРєР°СЏ РІРµСЂСЃРёСЏ:</td>
+		<td colspan="2" align="center" height="30">Английская версия:</td>
 	</tr>
 	<tr>
-		<td style="padding-left: 2px;"><font color="red"><b>*</b></font> Р—Р°РіРѕР»РѕРІРѕРє:</td>
+		<td style="padding-left: 2px;"><font color="red"><b>*</b></font> Заголовок:</td>
 		<td align="right"><input style="width: 490px;" type="text" name="title_en" maxlength="50" value="<?php print $title_en; ?>" /></td>
 	</tr>
 	<?php
@@ -118,17 +118,17 @@ $get_page_info = mysql_query("SELECT * FROM pages WHERE id = ".$id." LIMIT 1");
 	}
 	?>
 	<tr>
-		<td style="padding-left: 2px;">РљР»СЋС‡РµРІС‹Рµ СЃР»РѕРІР°:</td>
+		<td style="padding-left: 2px;">Ключевые слова:</td>
 		<td align="right"><input style="width: 490px;" type="text" name="keywords_en" maxlength="250" value="<?php print $keywords_en; ?>" /></td>
 	</tr>
 	<tr>
-		<td style="padding-left: 2px;">РћРїРёСЃР°РЅРёРµ&nbsp;СЃС‚СЂР°РЅРёС†С‹:</td>
+		<td style="padding-left: 2px;">Описание&nbsp;страницы:</td>
 		<td align="right"><input style="width: 490px;" type="text" name="description_en" maxlength="250" value="<?php print $description_en; ?>" /></td>
 	</tr>
 </table>
 <table align="center" width="630" border="0">
 	<tr>
-		<td align="right"><input type="submit" value="РЎРѕС…СЂР°РЅРёС‚СЊ!" /></td>
+		<td align="right"><input type="submit" value="Сохранить!" /></td>
 	</tr>
 </table>
 </form>

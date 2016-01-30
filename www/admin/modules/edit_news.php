@@ -8,13 +8,13 @@ if ($_GET['go'] == "go") {
 	$subject_en		= gs_html($_POST['subject_en']);
 	$text_en		= addslashes($_POST['text_en']);
 
-	if (!$subject) { print "<p class=\"er\">РЈРєР°Р¶РёС‚Рµ С‚РµРјСѓ РЅРѕРІРѕСЃС‚Рё!</p>"; }
-	elseif(!$text) { print "<p class=\"er\">Р’РІРµРґРёС‚Рµ С‚РµРєСЃС‚ РЅРѕРІРѕСЃС‚Рё!</p>"; }
+	if (!$subject) { print "<p class=\"er\">Укажите тему новости!</p>"; }
+	elseif(!$text) { print "<p class=\"er\">Введите текст новости!</p>"; }
 	else {
 		$sql = "UPDATE news SET subject = '".$subject."', msg = '".$text."', subject_en = '".$subject_en."', msg_en = '".$text_en."' WHERE id = ".$id." LIMIT 1";
 		$result = mysql_query($sql);
 
-		print "<p class=\"erok\">РќРѕРІРѕСЃС‚СЊ РѕС‚СЂРµРґР°РєС‚РёСЂРѕРІР°РЅР°!</p>";
+		print "<p class=\"erok\">Новость отредактирована!</p>";
 	}
 }
 
@@ -44,7 +44,7 @@ $text_en		= $row['msg_en'];
 		theme_advanced_statusbar_location : "bottom",
 		theme_advanced_resizing : true,
 
-		content_css : "/files/css/styles.css",
+		content_css : "/files/styles.css",
 
 		template_external_list_url : "lists/template_list.js",
 		external_link_list_url : "lists/link_list.js",
@@ -58,11 +58,11 @@ $text_en		= $row['msg_en'];
 	});
 </script>
 <FIELDSET style="border: solid #666666 1px;">
-<LEGEND><b>Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ РЅРѕРІРѕСЃС‚Рё</b></LEGEND>
+<LEGEND><b>Редактирование новости</b></LEGEND>
 <form action="?p=edit_news&id=<?php print $id; ?>&go=go" method="post" name="mainForm">
 <table bgcolor="#eeeeee" width="612" align="center" border="0" style="border: solid #cccccc 1px; width: 612px;">
 	<tr>
-		<td style="padding-left: 2px;">РўРµРјР°&nbsp;РЅРѕРІРѕСЃС‚Рё:</td>
+		<td style="padding-left: 2px;">Тема&nbsp;новости:</td>
 		<td align="right"><input style="width: 490px;" type="text" name="subject" size="97" value="<?php print $subject; ?>"></td>
 	</tr>
 	<tr>
@@ -71,10 +71,10 @@ $text_en		= $row['msg_en'];
 		</td>
 	</tr>
 	<tr>
-		<td align="center" colspan="2">РђРќР“Р›РР™РЎРљРђРЇ Р’Р•Р РЎРРЇ</td>
+		<td align="center" colspan="2">АНГЛИЙСКАЯ ВЕРСИЯ</td>
 	</tr>
 	<tr>
-		<td style="padding-left: 2px;">РўРµРјР°&nbsp;РЅРѕРІРѕСЃС‚Рё:</td>
+		<td style="padding-left: 2px;">Тема&nbsp;новости:</td>
 		<td align="right"><input style="width: 490px;" type="text" name="subject_en" size="97" value="<?php print $subject_en; ?>"></td>
 	</tr>
 	<tr>
@@ -85,7 +85,7 @@ $text_en		= $row['msg_en'];
 </table>
 <table align="center" width="624" border="0">
 	<tr>
-		<td align="right"><input type="image" src="images/save.png" width="24" height="24" border="0" title="РЎРѕС…СЂР°РЅРёС‚СЊ!" /></td>
+		<td align="right"><input type="image" src="images/save.png" width="24" height="24" border="0" title="Сохранить!" /></td>
 	</tr>
 </table>
 </form>
