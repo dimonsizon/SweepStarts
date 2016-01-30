@@ -30,28 +30,20 @@ if($ref) {
 ?>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
-<link href="/files/favicon.ico" type="image/x-icon" rel="shortcut icon" />
-<title><?php print $title; ?></title>
-<meta name="keywords" content="<?php print $keywords; ?>" />
-<meta name="description" content="<?php print $description; ?>" />
-<link href="/files/css/styles.css" type="text/css" rel="stylesheet" />
-<script language="javascript" src="/files/scripts.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+	<link href="/files/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+	<title><?php print $title; ?></title>
+	<meta name="keywords" content="<?php print $keywords; ?>" />
+	<meta name="description" content="<?php print $description; ?>" />
+	<link href="/files/css/styles.css" type="text/css" rel="stylesheet" />
+	<script language="javascript" src="/files/scripts.js"></script>
 </head>
 <body>
 <div id="header">
 	<div class="left">
-		<a class="logo" href="/"><img src="/img/tpl/logo.jpg" width="163" height="139" border="0" alt="GoldScript"></a>
+		<a class="logo" href="/"><img src="/img/tpl/logo.png" border="0" alt="SWEEPSTARTS"></a>
 	</div>
-	<div class="right">
-		<div class="circle"><br><?php print $lang['activeusers']; ?><br /><span style="background: url('/img/tpl/users_ico.gif') no-repeat left;"><?php print $cusers; ?></span></div>
-		<div class="circle"><br><?php print $lang['deposits']; ?><br /><span style="background: url('/img/tpl/deposits_ico.gif') no-repeat left;"><?php print $depmoney; ?></span></div>
-		<div class="circle"><br><?php print $lang['payouts']; ?><br /><span style="background: url('/img/tpl/payout_ico.gif') no-repeat left;"><?php print $money; ?></span></div>
-		<div class="languages-block">
-			<a href="<?php if($page) { print "/".$page; } ?>/?lang=en"><img src="/img/us_ico.gif" width="18" height="12" border="0" alt="English" title="English"></a>
-			<a href="<?php if($page) { print "/".$page; } ?>/?lang=ru"><img src="/img/ru_ico.gif" width="18" height="12" border="0" alt="Русский" title="Русский"></a>
-		</div>
-	</div>
+	
 	<div class="right">
 		<div id="menu">
 			<ul>
@@ -108,6 +100,12 @@ if($ref) {
 	</div>
 	<div class="right">
 		<img src="/img/tpl/paysystems.jpg" width="582" height="28" border="0" alt="">
+	</div>
+	<div class="right">		
+		<div class="languages-block">
+			<a href="<?php if($page) { print "/".$page; } ?>/?lang=en"><img src="/img/us_ico.gif" width="18" height="12" border="0" alt="English" title="English"></a>
+			<a href="<?php if($page) { print "/".$page; } ?>/?lang=ru"><img src="/img/ru_ico.gif" width="18" height="12" border="0" alt="Русский" title="Русский"></a>
+		</div>
 	</div>
 </div>
 <div class="br"></div>
