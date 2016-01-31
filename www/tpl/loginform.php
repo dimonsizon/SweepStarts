@@ -62,13 +62,14 @@ if(!$login) {
 		print $lang['balance'].": <b>".$balance."</b> ".$moneycurr."</p>";
 	}
 
-	if($percent) {
-	print '<div style="text-align: center;"><div style="width: 90px; border: 1px solid #e6433a; border-radius: 3px 0 0 3px; padding: 7px; color: #e6433a; margin-bottom: 15px; float: left;">'.$lang['yourdohod'].'</div><div id="dohodno"></div></div><script language="JavaScript">
-	<!--
-		CalcDohod('.$percent.', '.$zar.');
-	//-->
-	</script>';
-	}
+	//это странный автоматический счетчик, который был слева http://grab.by/NKJ0
+	//if($percent) {
+	//print '<div style="text-align: center;"><div style="width: 90px; border: 1px solid #e6433a; border-radius: 3px 0 0 3px; padding: 7px; color: #e6433a; margin-bottom: 15px; float: left;">'.$lang['yourdohod'].'</div><div id="dohodno"></div></div><script language="JavaScript">
+	//<!--
+	//	CalcDohod('.$percent.', '.$zar.');
+	////-->
+	//</script>';
+	//}
 	// конец счетчика дохода
 
 	print '<div class="clear"></div>';
