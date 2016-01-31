@@ -16,6 +16,7 @@
 body {
 	margin: 0;
 	padding: 0;
+    color: #333;
 	background-color: #fff;
 	height: 100%;
 	font: 12px RobotoRegular;
@@ -27,7 +28,8 @@ body {
 }
 
 table, td {
-	font: 11px RobotoRegular;
+    color: #333;
+	font: 12px RobotoRegular;
 }
 .clear {
 	clear: both;
@@ -338,11 +340,3 @@ input[type="radio"] {
 
 
 /*************************************/
-.contribution-table {
-    margin-top: 20px;
-}
-
-    .contribution-table th, 
-    .contribution-table td{
-        padding: 2px 10px;
-    }

@@ -1,0 +1,22 @@
+﻿.contribution-table {
+    margin-top: 20px;
+    font-size: 12px;
+    border-collapse: collapse;
+}
+
+    .contribution-table th {
+        padding: 7px 5px;
+        text-align: left; 
+        font-weight: normal;
+        background-color: #eee;       
+    }
+
+ 
+    .contribution-table td {
+        padding: 7px 5px;
+        color: #666;
+    }
+
+    .contribution-table tr:nth-child(2n) td {
+        background-color: #fafafa;
+    }

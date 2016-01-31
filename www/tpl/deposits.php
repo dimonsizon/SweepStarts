@@ -9,7 +9,7 @@ print "<table class=\"contribution-table\">
 			<th>Дата</th>
 			<th>Сумма</th>
 			<th>Валюта</th>
-			<th>%</th>
+			<th>% в день</th>
 			<th>Осталось дней</th>
 			<th>Начислений в день</th>
 			<th>Начислено</th>
@@ -121,6 +121,6 @@ print "</tbody>
 if($s == 0) {
 	print '<p class="er">'.$lang['msg_11'].'</p>';
 } else {
-		print $lang['msg_12'].': <b>'.$s.'</b> '.$moneycurr;
+		print '<p class="all-sum">'.$lang['msg_12'].': <b>'.$s.'</b> '.$moneycurr.'</p>';
 }
 ?>
