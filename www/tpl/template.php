@@ -38,6 +38,7 @@ if($ref) {
 	<link href="/files/css/styles.css" type="text/css" rel="stylesheet" />
 	<link href="/files/css/menu.css" type="text/css" rel="stylesheet" />
 	<link href="/files/css/contributions.css" type="text/css" rel="stylesheet" />
+	<link href="/fonts/font-awesome-4.2.0/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
 	<script language="javascript" src="/files/scripts.js"></script>
 </head>
 <body>

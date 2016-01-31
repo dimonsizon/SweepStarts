@@ -43,6 +43,22 @@ table, td {
 	/*margin-bottom: 1px;*/
 }
 
+.text-success {
+    color: #3cea40;
+}
+
+.text-error {
+    color: #f23c32;
+}
+
+.text-blue {
+    color: #02b2ff;
+}
+
+.text-warning {
+    color: #e9940e;
+}
+
 header {
 	background-color: #02b2ff;
     overflow: hidden;
@@ -338,3 +354,8 @@ input[type="radio"] {
 
 
 /*************************************/
+/*статус пополнения баланса*/
+
+.status i {
+    font-size: 16px;
+}

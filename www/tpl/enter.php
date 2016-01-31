@@ -56,16 +56,16 @@ defined('ACCESS') or die();
 		<td>".$row['sum']." ".$moneycurr."</td>
 		<td><b>".$row['purse']."</b></td>
 		<td>".$row['paysys']."</td>
-		<td>";
+		<td class=\"status\">";
 
 		if($row['status'] == 0) {
-			print '<span class="tool"><img src="/img/proc_ico.png" width="16" height="16" alt="" /><span class="tip">'.$lang['msg_07'].'</span></span>';
+			print '<span class="tool"><i class="fa fa-hourglass text-warning "><span class="tip">'.$lang['msg_07'].'</span></span>';
 		} elseif($row['status'] == 1) {
-			print '<span class="tool"><img src="/img/wait_ico.png" width="16" height="16" alt="" /><span class="tip">'.$lang['msg_03'].'</span></span>';
+			print '<span class="tool"><i class="fa fa-clock-o text-blue"></i><span class="tip">'.$lang['msg_03'].'</span></span>';
 		} elseif($row['status'] == 2) {
-			print '<span class="tool"><img src="/img/yes_ico.png" width="16" height="16" alt="" /><span class="tip">'.$lang['msg_04'].'</span></span>';
+			print '<span class="tool"><i class="fa fa-check text-success"></i><span class="tip">'.$lang['msg_04'].'</span></span>';
 		} else {
-			print '<span class="tool"><img src="/img/no_ico.png" width="16" height="16" alt="" /><span class="tip">'.$lang['msg_08'].'</span></span>';
+			print '<span class="tool"><i class="fa fa-ban text-error"></i><span class="tip">'.$lang['msg_08'].'</span></span>';
 		}
 
 		print "</td>
