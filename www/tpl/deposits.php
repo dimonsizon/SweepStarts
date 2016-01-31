@@ -84,8 +84,12 @@ print "</table>";
 							elseif($row2['period'] == 2) { print $land['weekly']; } 
 								elseif($row2['period'] == 3) { print $land['mesyac']; }
 				print "</td>
-				<td>Начислений в день</td>
-				<td>Начислено</td>
+				<td>";
+					print ($row['sum']/100).' '.$moneycurr;
+				print "</td>
+				<td>";
+					print ($row['sum']/100)*$row['count'].' '.$moneycurr;
+				print "</td>
 			</tr>";
 
 /*Ниже прегресс бар сколько осталось до следующей выплаты
