@@ -65,18 +65,18 @@ if($ref) {
 	<div class="clear"></div>
 	<div class="container">
 		<div class="left" style="width: 250px;">
-			<div class="block">
+			<div class="card">
 				<h3><?php print $lang['auth']; ?></h3>
 				<?php include "tpl/loginform.php"; ?>
 			</div>
 			<div class="br"></div>
-			<div class="block">
+			<div class="card">
 				<h3><?php print $lang['stat']; ?></h3>
 				<?php include "tpl/stat.php"; ?>
 			</div>
 		</div>
 		<div class="right">
-			<div class="block" style="width: 650px;">
+			<div class="card" style="width: 650px;">
 				<h3><?php print $title; ?></h3>
 <?php
 	if(!$page) {

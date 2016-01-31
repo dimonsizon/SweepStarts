@@ -72,7 +72,7 @@ header {
 	min-height: 500px;
 }
 
-.block {
+.card {
 	background: url("/img/tpl/block.gif") repeat-x left bottom #ffffff;
 	border-radius: 3px;
 	padding: 15px 15px 25px 15px;
