@@ -69,11 +69,11 @@ if($ref) {
 				<h3><?php print $lang['auth']; ?></h3>
 				<?php include "tpl/loginform.php"; ?>
 			</div>
-			<div class="br"></div>
+			<!--<div class="br"></div>
 			<div class="card">
-				<h3><?php print $lang['stat']; ?></h3>
-				<?php include "tpl/stat.php"; ?>
-			</div>
+				
+				
+			</div>-->
 		</div>
 		<div class="right">
 			<div class="card" style="width: 650px;">
