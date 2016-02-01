@@ -143,7 +143,7 @@ textarea:focus {
 
 input[type="submit"], input[type="button"] {
 	cursor: pointer;
-	background-color: #2680bc;
+	background-color: #02b2ff;
 	border: 0px;
 	padding: 5px 29px 5px 29px;
 	border-radius: 6px;
@@ -161,7 +161,7 @@ a {
 }
 
 a:hover {
-	color: #2680bc;
+	color: #02b2ff;
 	text-decoration: none;
 }
 
@@ -185,7 +185,7 @@ h4 {
 	margin: 0 0 10px 0;
 	padding-left: 10px;
 	padding-bottom: 10px;
-	color: #2680bc;
+	color: #02b2ff;
 	background: url(/img/tpl/h4.gif) repeat-x left bottom;
 }
 .br {
@@ -326,10 +326,10 @@ input[type="radio"] {
 
 .priceperctxt {
 	width: 170px; 
-	border: 1px solid #2680bc; 
+	border: 1px solid #02b2ff; 
 	border-radius: 3px 0 0 3px; 
 	padding: 7px; 
-	color: #2680bc; 
+	color: #02b2ff; 
 	margin-bottom: 15px; 
 }
 .priceperc {
@@ -341,7 +341,7 @@ input[type="radio"] {
 	padding: 7px; 
 	height: 16px; 
 	color: #ffffff; 
-	background-color: #2680bc
+	background-color: #02b2ff
 }
 .priceparttxt {
 	width: 170px; 
