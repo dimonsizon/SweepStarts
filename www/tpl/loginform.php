@@ -75,24 +75,29 @@ if(!$login) {
 
 	print '<div class="clear"></div>';
 
-	if($status == 1) {
-		print '<div class="authmenu"><a href="/admin"><u>'.$lang['adminpanel'].'</u></a></div>';
-	}
-	print '<div class="authmenu"><a href="/enter">'.$lang['enterbalance'].'</a></div>';
-	print '<div class="authmenu"><a href="/newdeposit">'.$lang['opendeposit'].'</a></div>';
-	print '<div class="authmenu"><a href="/deposits">'.$lang['yourdeposits'].'</a></div>';
-	if(cfgSET('cfgBonusOnOff') == "on" && cfgSET('cfgBonusBal') == "on") {
-		print '<div class="authmenu"><a href="/bonus">'.$lang['enterbonus'].'</a></div>';
-	}
-	if(cfgSET('cfgTrans') == "on") {
-		print '<div class="authmenu"><a href="/transfer">'.$lang['transfer'].'</a></div>';
-	}
-	print '<div class="authmenu"><a href="/withdrawal">'.$lang['withdrawal'].'</a></div>';
-	print '<div class="authmenu"><a href="/msg">'.$lang['msgs'].'</a> <b>['.$newmsgs.']</b></div>';
-	print '<div class="authmenu"><a href="/affiliate">'.$lang['affiliate'].'</a></div>';
-	print '<div class="authmenu"><a href="/statistics">'.$lang['stat'].'</a></div>';
-	print '<div class="authmenu"><a href="/profile">'.$lang['profile'].'</a></div>';
-	print '<div class="authmenu"><a href="/logout.php">'.$lang['exit'].'</a></div>';
-
+	print '<nav class="user-menu"><ul>';
+	
+		if($status == 1) {
+			print '<li class="menu-item"><a href="/admin"><i class="fa fa-user-secret"></i><u>'.$lang['adminpanel'].'</u></a></li>';
+		}
+		print '<li class="menu-item"><a href="/enter"><i class="fa fa-arrow-down"></i>'.$lang['enterbalance'].'</a></li>';
+		print '<li class="menu-item"><a href="/newdeposit"><i class="fa fa-percent"></i>'.$lang['opendeposit'].'</a></li>';
+		print '<li class="menu-item"><a href="/deposits"><i class="fa fa-pie-chart"></i>'.$lang['yourdeposits'].'</a></li>';
+		if(cfgSET('cfgBonusOnOff') == "on" && cfgSET('cfgBonusBal') == "on") {
+			print '<li class="menu-item"><a href="/bonus">'.$lang['enterbonus'].'</a></li>';
+		}
+		if(cfgSET('cfgTrans') == "on") {
+			print '<li class="menu-item"><a href="/transfer">'.$lang['transfer'].'</a></li>';
+		}
+		print '<li class="menu-item"><a href="/withdrawal"><i class="fa fa-arrow-up"></i>'.$lang['withdrawal'].'</a></li>';
+		print '<li class="menu-item"><a href="/msg"><i class="fa fa-comments-o"></i>'.$lang['msgs'].'</a> <b>'; 
+			if($newmsgs!=0) { 
+				print '+'.$newmsgs;
+			} print '</b></li>';
+		print '<li class="menu-item"><a href="/affiliate"><i class="fa fa-users"></i>'.$lang['affiliate'].'</a></li>';
+		print '<li class="menu-item"><a href="/statistics"><i class="fa fa-bar-chart"></i>'.$lang['stat'].'</a></li>';
+		print '<li class="menu-item"><a href="/profile"><i class="fa fa-user"></i>'.$lang['profile'].'</a></li>';
+		print '<li class="menu-item"><a href="/logout.php"><i class="fa fa-sign-out"></i>'.$lang['exit'].'</a></li>';
+	print '</ul></nav>';
 }
 ?>

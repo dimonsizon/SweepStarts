@@ -13,6 +13,10 @@
     src: url(/fonts/roboto/Roboto-Regular.ttf); 
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
 	margin: 0;
 	padding: 0;
@@ -161,13 +165,20 @@ a:hover {
 	text-decoration: none;
 }
 
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 h3 {
 	text-transform: uppercase;
 	font-size: 14px;
     font-weight: normal;
 	margin: 0 0 10px 0;
 	padding-bottom: 10px;
-	color: #02b2ff;
+	color: #333;
+    font-family: RobotoMedium;
 }
 h4 {
 	font-size: 12px;

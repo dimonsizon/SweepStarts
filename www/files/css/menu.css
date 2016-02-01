@@ -59,23 +59,36 @@
             }
 
 /******************Account menu********************/
-.authmenu {
-	margin-top: 7px;
-	padding: 10px;
-	border-radius: 4px;
-	background-color: #02b2ff;
+.menu-item {
+	
 }
-.authmenu:hover {
-	margin-top: 7px;
-	padding: 10px;
-	border-radius: 4px;
-	background-color: #2680bc;
+
+.menu-item:hover {
+	
 }
-.authmenu a {
-	text-decoration: none;
-	font-weight: bold;
-	padding-left: 20px;
-	background: url('/img/tpl/authmenu.png') no-repeat left;
-	font-size: 14px;
-	color: #ffffff;
-}
+
+    .menu-item a {
+	    padding: 10px 15px;
+        line-height: 32px;
+        color: #666;
+        font-size: 13px;
+        display: block;
+    }
+
+    .menu-item:hover a {
+        color: #fff;
+        background-color: #02b2ff;
+    }
+
+        .menu-item:hover a i {
+            color: #fff;
+        }
+
+        .menu-item a i {
+            width: 30px;
+	        margin-right: 10px;
+            float: left;
+            font-size: 28px;
+            color: #02b2ff;
+            text-align: center;
+        }

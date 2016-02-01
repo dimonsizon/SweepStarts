@@ -39,6 +39,7 @@ if($ref) {
 	<link href="/files/css/menu.css" type="text/css" rel="stylesheet" />
 	<link href="/files/css/contributions.css" type="text/css" rel="stylesheet" />
 	<link href="/files/css/general.css" type="text/css" rel="stylesheet" />
+	<link href="/files/css/left-panel.css" type="text/css" rel="stylesheet" />
 	<link href="/fonts/font-awesome-4.2.0/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
 	<script language="javascript" src="/files/scripts.js"></script>
 </head>
@@ -81,8 +82,8 @@ if($ref) {
 <div class="main-container">
 	<div class="clear"></div>
 	<div class="container">
-		<div class="left" style="width: 250px;">
-			<div class="card">
+		<div class="left-panel pull-left">
+			<div class="">
 				<!--<h3><?php print $lang['auth']; ?></h3>-->
 				<?php include "tpl/loginform.php"; ?>
 			</div>
@@ -92,29 +93,27 @@ if($ref) {
 				
 			</div>-->
 		</div>
-		<div class="right">
-			<div class="card" style="width: 650px;">
-				<h3><?php print $title; ?></h3>
-<?php
-	if(!$page) {
-		include "includes/index.php";
-	} elseif(file_exists("modules/".$page.".php")) {
-		include "modules/".$page.".php";
-	} else {
-		include "modules/page.php";
-	}
-?>
-			</div>
+		<div class="center-panel">
+			<h3><?php print $title; ?></h3>
+			<?php
+				if(!$page) {
+					include "includes/index.php";
+				} elseif(file_exists("modules/".$page.".php")) {
+					include "modules/".$page.".php";
+				} else {
+					include "modules/page.php";
+				}
+			?>
 		</div>
 	</div>
 	<div class="clear"></div>
 </div>
 <div id="footer">
 	<div class="container">
-		<div class="left">
+		<div class="pull-left">
 		&copy; <?php print date("Y"); ?> <a href="#" target="_blank">SWEEPSTARTS</a> Краудфандинговая платформа 
 		</div>	
-		<div class="right">		
+		<div class="pull-right">		
 			<div class="languages-block">
 				<a href="<?php if($page) { print "/".$page; } ?>/?lang=en"><img src="/img/us_ico.gif" width="18" height="12" border="0" alt="English" title="English"></a>
 				<a href="<?php if($page) { print "/".$page; } ?>/?lang=ru"><img src="/img/ru_ico.gif" width="18" height="12" border="0" alt="Русский" title="Русский"></a>

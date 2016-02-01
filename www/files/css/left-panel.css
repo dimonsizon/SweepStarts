@@ -1,0 +1,13 @@
+﻿.left-panel {    
+    width: 250px;
+    min-height: 800px;
+    background-color: #fff;
+    border-right: 1px solid #eee;
+}
+
+.center-panel {
+    min-height: 800px;
+    padding: 10px;
+    background-color: #fff;
+    overflow: hidden;
+}
