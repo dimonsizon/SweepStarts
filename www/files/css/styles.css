@@ -200,45 +200,30 @@ h4 {
 }
 
 .er {
-	text-align: center; 
-	color: #cc0000; 
-	border: 1px solid #990000; 
-	background: url('/img/error_ico.png') no-repeat left #ffcccc;
-	background-position: 15px 17px;
+	color: #F11F1F; 
+	background: #FBCDCA;
 	padding-top: 20px;
 	padding-left: 35px;
 	padding-bottom: 20px;
 	margin-top: 10px;
 	margin-bottom: 20px;
-	border-radius: 5px;
-	font: 14px Tahoma, Verdana, Arial, Helvetica, sans-serif;
-	text-shadow: #ffffff 1px 1px 3px;
 }
+
 .erok {
-	text-align: center; 
 	color: red; 
 	color: #009900; 
-	border: 1px solid #006600; 
-	background: url('/img/errorok_ico.png') no-repeat left #ccffcc;
-	background-position: 15px 17px;
 	padding-top: 20px;
 	padding-left: 35px;
 	padding-bottom: 20px;
 	margin-top: 10px;
 	margin-bottom: 20px;
-	border-radius: 5px;
-	font: 14px Tahoma, Verdana, Arial, Helvetica, sans-serif;
-	text-shadow: #ffffff 1px 1px 3px;
 }
+
 .warn {
-	text-align: center; 
 	color: #663300; 
-	border: 1px solid #ffcc00; 
 	background-color: #ffffcc;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	border-radius: 4px;
-	text-shadow: #ffffff 1px 1px 3px;
 }
 .pages {
 	margin-top: 10px;
