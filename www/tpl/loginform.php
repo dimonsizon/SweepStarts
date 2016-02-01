@@ -52,15 +52,16 @@ if(!$login) {
 	$zar = $zar + (time() - $lastdate) * $percent; 
 
 	}
-
-    print "<p align=\"center\"><b>".$lang['welcome']."</b> <b style=\"color: #2680bc;\">".$login."</b>!<br />";
 	
-	if(cfgSET('cfgBonusBal') == "on") {
-		print "<div class=\"left\">".$lang['balance'].":</div><div class=\"right\"><b>".$balance."</b> ".$moneycurr."</div><div class=\"clear\"></div>
-		<div class=\"left\"><font color=\"#666666\">".$lang['balance']." BONUS:</div><div class=\"right\"><b>".$bonusbalance."</b> ".$moneycurr."</font></div><div class=\"clear\"></div></p>";
-	} else {
-		print $lang['balance'].": <b>".$balance."</b> ".$moneycurr."</p>";
-	}
+	//это вывод логина и баланса http://grab.by/NMqo
+    //print "<p align=\"center\"><b>".$lang['welcome']."</b> <b style=\"color: #2680bc;\">".$login."</b>!<br />";
+	//
+	//if(cfgSET('cfgBonusBal') == "on") {
+	//	print "<div class=\"left\">".$lang['balance'].":</div><div class=\"right\"><b>".$balance."</b> ".$moneycurr."</div><div class=\"clear\"></div>
+	//	<div class=\"left\"><font color=\"#666666\">".$lang['balance']." BONUS:</div><div class=\"right\"><b>".$bonusbalance."</b> ".$moneycurr."</font></div><div class=\"clear\"></div></p>";
+	//} else {
+	//	print $lang['balance'].": <b>".$balance."</b> ".$moneycurr."</p>";
+	//}
 
 	//это странный автоматический счетчик, который был слева http://grab.by/NKJ0
 	//if($percent) {

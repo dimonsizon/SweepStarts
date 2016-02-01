@@ -3,6 +3,27 @@
     float: left;
 }
 
+.user-block {
+    margin: 10px 0 20px;
+    color: #fff;
+    text-align: right;
+    font-size: 14px;
+}
+
+    .user-block i {
+        margin-right: 3px;
+        font-size: 20px;
+    }
+
+    .user-block .balans {
+        margin-left: 10px;
+    }
+
+        .user-block .bonus-bal {
+            margin-left: 10px;
+        }
+
+
 .nav-bar {
 	
 }

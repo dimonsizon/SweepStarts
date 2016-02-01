@@ -44,12 +44,27 @@ if($ref) {
 </head>
 <body>
 <header id="header">
-	<div class="container">
+	<div class="container">		
 		<div class="logo">
 			<a href="/"><img src="/img/tpl/logo.png" border="0" alt="SWEEPSTARTS"></a>
 		</div>
 	
-		<div class="right">
+		<div class="pull-right">
+			<div class="user-block text-right">
+				<span class=""><i class="fa fa-user"></i> <span><?php print $login;?></span></span>
+				<span class="balans">
+					<i class="fa fa-usd"></i> 
+					<?php
+						if(cfgSET('cfgBonusBal') == "on") {
+							print "<span> ".$balance." ".$moneycurr."</span>
+							<span class=\"bonus-bal\">BONUS: ".$bonusbalance." ".$moneycurr."</span>";
+						} else {
+							print "<span>".$balance."</span> ".$moneycurr."</p>";
+						}				
+					?>
+				</span>
+			</div>
+			
 			<nav id="menu" class="nav-bar">
 				<ul>
 					<li><a href="/"><?php print $lang['homepage']; ?></a></li>
@@ -68,7 +83,7 @@ if($ref) {
 	<div class="container">
 		<div class="left" style="width: 250px;">
 			<div class="card">
-				<h3><?php print $lang['auth']; ?></h3>
+				<!--<h3><?php print $lang['auth']; ?></h3>-->
 				<?php include "tpl/loginform.php"; ?>
 			</div>
 			<!--<div class="br"></div>
