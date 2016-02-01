@@ -3,7 +3,7 @@ defined('ACCESS') or die();
 $s = 0;
 $result	= mysql_query("SELECT * FROM `deposits` WHERE `user_id` = ".$user_id." ORDER BY id ASC");
 
-print "<table class=\"contribution-table\">
+print "<table class=\"table-content\">
 	<thead>
 		<tr>
 			<th>Дата</th>

@@ -1,0 +1,22 @@
+﻿.table-content {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 12px;
+    border-collapse: collapse;
+}
+
+    .table-content th {
+        padding: 7px 5px;
+        text-align: left; 
+        font-weight: normal;
+        background-color: #eee;       
+    }
+ 
+    .table-content td {
+        padding: 7px 5px;
+        color: #666;
+    }
+
+    .table-content tr:nth-child(2n) td {
+        background-color: #fafafa;
+    }
