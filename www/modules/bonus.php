@@ -58,7 +58,7 @@ if(cfgSET('cfgBonusOnOff') == "on" && cfgSET('cfgBonusBal') == "on" && $login) {
 print '<hr>';
 
 print '<h3>'.$lang['lastbonuses'].':</h3>
-<table class="tbl" width="100%" border="0">
+<table class="table-content" width="100%" border="0">
 <tr align="center">
 	<th><b>'.$lang['date'].':</b></th>
 	<th><b>'.$lang['login'].':</b></th>

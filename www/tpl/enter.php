@@ -42,7 +42,7 @@ defined('ACCESS') or die();
 		print "<p class=\"er\">".$lang['nodata']."</p>";
 	} else {
 
-		print "<table width=\"100%\" class=\"tbl\"><tr align=\"center\"><th><b>#</b></th><th width=\"100\"><b>".$lang['date']."</b></th><th><b>".$lang['sum']."</b></th><th><b>".$lang['schet']."</b></th><th><b>".$lang['system']."</b></th><th><b>".$lang['status']."</b></th></tr>";
+		print "<table width=\"100%\" class=\"table-content\"><tr align=\"center\"><th><b>#</b></th><th width=\"100\"><b>".$lang['date']."</b></th><th><b>".$lang['sum']."</b></th><th><b>".$lang['schet']."</b></th><th><b>".$lang['system']."</b></th><th><b>".$lang['status']."</b></th></tr>";
 
 		$i = 1;
 		$s = 0;

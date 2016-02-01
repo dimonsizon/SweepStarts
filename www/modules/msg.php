@@ -25,7 +25,7 @@ if(!$login) {
 	<td><a style="font-size: 14px;" href="/newmsg/"><b><?php print $lang['new_ticcet']; ?></b></a></td>
 </tr>
 </table>
-<table class="tbl" cellpadding="1" cellspacing="1">
+<table class="table-content" cellpadding="1" cellspacing="1">
 <tr>
 	<th width="20"><b>+</b></th>
 	<th width="470"><b><?php print $lang['subject']; ?></b></th>

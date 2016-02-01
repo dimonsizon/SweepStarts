@@ -43,7 +43,7 @@ print '<tr><td><img style="max-width: 800px;" src="/img/promo/'.$row['id'].'.'.$
 
 <hr color="#cccccc" size="2">
 &nbsp;<b><?php print $lang['youref']; ?>:</b>
-<table width="100%" class="tbl">
+<table width="100%" class="table-content">
 <tr align="center">
 	<th width="50"><b>#</b></th>
 	<th align="left" style="padding: 5px;"><b>Login:</b></th>

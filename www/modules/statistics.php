@@ -21,7 +21,7 @@ if($login) {
 	<div class="left priceparttxt"><?php print $lang['partnerdoh']; ?>:</div><div class="right pricepart"><?php print $part.' '.$moneycurr; ?></div>
 </div>
 
-<table width="100%" class="tbl">
+<table width="100%" class="table-content">
 <tr align="center">
 	<th height="25"><b><?php print $lang['date']; ?>:</b></th>
 	<th><b><?php print $lang['sum']; ?>:</b></th>
