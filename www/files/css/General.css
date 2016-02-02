@@ -1,4 +1,13 @@
-﻿.table-content {
+﻿.required {
+    color: red;
+}
+
+h3.center-title {
+    margin: 10px 9;
+}
+
+/********************/
+.table-content {
     width: 100%;
     margin-top: 20px;
     font-size: 12px;
@@ -21,7 +30,7 @@
         background-color: #fafafa;
     }
 
-/*******************Form**********************/
+/*******************Forms**********************/
 .form-container {
     padding: 10px;
 }
@@ -35,7 +44,7 @@
             display: block;
         }
 
-        .form-container .form-field input {
+        .form-container .form-field input.text-input {
             width: 100%;
         }
 
@@ -54,3 +63,19 @@
             text-align: center;
             display: block;
         }
+
+.form-container.registration-form {
+    margin: 0 auto;
+    width: 400px;
+}
+
+   .form-container .form-field.captcha input {
+       width: 310px;
+       height: 40px;
+   }
+
+   .sponsor {
+       margin-bottom: 20px;
+       font-size: 16px;
+       text-align: center;
+   }

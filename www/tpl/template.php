@@ -96,7 +96,7 @@ if($ref) {
 			</div>-->
 		</div>
 		<div class="center-panel">
-			<h3><?php print $title; ?></h3>
+			<h3 class="center-title"><?php print $title; ?></h3>
 			<?php
 				if(!$page) {
 					include "includes/index.php";

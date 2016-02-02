@@ -36,11 +36,11 @@ if(!$login) {
 		<form action="/login" method="post">
 			<div class="form-field">
 				<label><?php print $lang['login']; ?></label>
-				<input type="text" name="user">
+				<input class="text-input" type="text" name="user">
 			</div>
 			<div class="form-field">
 				<label><?php print $lang['password']; ?></label>
-				<input type="password" name="pass">
+				<input class="text-input" type="password" name="pass">
 			</div>
 			<div class="form-buttons">
 				<input type="submit" value="<?php print $lang['enter']; ?>" />
