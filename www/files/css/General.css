@@ -64,7 +64,8 @@ h3.center-title {
             display: block;
         }
 
-.form-container.registration-form {
+.form-container.registration-form,
+.form-container.remember-form {
     margin: 0 auto;
     width: 400px;
 }
