@@ -80,3 +80,45 @@ h3.center-title {
        font-size: 16px;
        text-align: center;
    }
+
+/****************Open deposite*****************/
+
+.open-contribution {
+
+}
+
+    .open-contribution .block-tile {
+        float: left;
+    }
+
+    .open-contribution .form-container {
+        width: 350px;
+        float: right;
+    }
+
+.block-tile {
+    width: 300px;
+    border: 1px solid #eee;
+}
+
+    .block-tile label {
+        display: block;
+    }
+
+    .block-tile .header-info {
+        padding: 10px;
+        background-color: #eee;
+    }
+
+        .block-tile .header-info input {
+            display: none; /*radio*/
+        }
+
+    .block-tile .short-info {
+        padding: 10px;
+        /*text-align: center;*/
+    }
+
+        .block-tile .short-info .days {
+            text-transform: capitalize;
+        }

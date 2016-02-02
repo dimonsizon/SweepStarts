@@ -63,6 +63,11 @@ table, td {
     color: #e9940e;
 }
 
+
+.text-center {
+    text-align: center;
+}
+
 header {
 	background-color: #02b2ff;
     overflow: hidden;
@@ -184,15 +189,12 @@ h4 {
 	padding-left: 10px;
 	padding-bottom: 10px;
 	color: #02b2ff;
-	background: url(/img/tpl/h4.gif) repeat-x left bottom;
 }
 .br {
 	height: 25px;
 }
 
 .depoico {
-	border: 2px solid #cccccc; 
-	border-radius: 3px; 
 	margin-right: 10px; 
 	max-width: 70px;
 }
