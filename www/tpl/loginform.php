@@ -16,7 +16,7 @@ $mycur = mycurrency($mycurrency);
 
 if(!$login) {
 ?>
-	<table align="center" cellpadding="1" cellspacing="0">
+	<!--<table align="center" cellpadding="1" cellspacing="0">
 	<form action="/login" method="post">
 	<tr>
 		<td style="padding-left: 5px;"><?php print $lang['login']; ?></td>
@@ -31,8 +31,24 @@ if(!$login) {
 		<td align="right"><input type="submit" value="<?php print $lang['enter']; ?>" /></td>
 	</tr>
 	</form>
-	</table>
-
+	</table>-->
+	<div class="form-container">
+		<form action="/login" method="post">
+			<div class="form-field">
+				<label><?php print $lang['login']; ?></label>
+				<input type="text" name="user">
+			</div>
+			<div class="form-field">
+				<label><?php print $lang['password']; ?></label>
+				<input type="password" name="pass">
+			</div>
+			<div class="form-buttons">
+				<input type="submit" value="<?php print $lang['enter']; ?>" />
+				<a class="button" href="/registration"><?php print $lang['registration']; ?></a>
+				<a class="btn-link" href="/reminder"><?php print $lang['reminder']; ?></a>
+			</div>
+		</form>
+	</div>
 <?php
 } else {
 	$newmsgs = mysql_num_rows(mysql_query("SELECT `id` FROM `msgs` WHERE `to_id` = ".$user_id." AND `read` = 0"));

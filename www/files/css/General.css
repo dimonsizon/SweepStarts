@@ -20,3 +20,37 @@
     .table-content tr:nth-child(2n) td {
         background-color: #fafafa;
     }
+
+/*******************Form**********************/
+.form-container {
+    padding: 10px;
+}
+
+    .form-container .form-field {
+        margin-bottom: 10px;
+    }
+
+        .form-container .form-field label {
+            padding: 3px 0;
+            display: block;
+        }
+
+        .form-container .form-field input {
+            width: 100%;
+        }
+
+    .form-container .form-buttons {
+
+    }
+
+        .form-container .form-buttons input,
+        .form-container .form-buttons .button {
+            margin-bottom: 10px;
+            display: block;
+            width: 100%;
+        }
+
+        .form-container .form-buttons .btn-link {
+            text-align: center;
+            display: block;
+        }
