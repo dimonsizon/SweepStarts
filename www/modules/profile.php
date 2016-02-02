@@ -13,9 +13,14 @@ if ($login) {
 		$pm		= gs_html($_POST['pm']);
 		$pe		= gs_html($_POST['pe']);
 		$skype	= gs_html($_POST['skype']);
+		$currency	= intval($_POST['currency']);
+		$phone	= gs_html($_POST['phone']);
+		$social	= gs_html($_POST['social']);
+		$bank	= gs_html($_POST['bank']);
 
 		if($upm) { $pm = $upm; } 
 		if($upe) { $pe = $upe; } 
+		if($mycurrency != 1) { $currency = $currency; } 
 
 		if (!$email) {
 			echo '<p class="er">'.$lang['er_09'].'</p>';
@@ -35,7 +40,7 @@ if ($login) {
 					$sql = 'UPDATE `users` SET ';
 					if($pass_1) { $sql .= 'pass = "'.gs_md5($licKEY, $pass_1).'", '; }
 
-					$sql .= 'mail = "'.$email.'", icq = "'.$icq.'", pm = "'.$pm.'", pe = "'.$pe.'", skype = "'.$skype.'" WHERE id = '.$user_id.' LIMIT 1';
+					$sql .= 'currency = '.$currency.', phone = "'.$phone.'", social = "'.$social.'", bank = "'.$bank.'", mail = "'.$email.'", icq = "'.$icq.'", pm = "'.$pm.'", pe = "'.$pe.'", skype = "'.$skype.'" WHERE id = '.$user_id.' LIMIT 1';
 					if (mysql_query($sql)) {
 						print '<p class="erok">'.$lang['savedata'].'</p>';
 					} else {

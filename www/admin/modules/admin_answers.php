@@ -3,9 +3,9 @@ defined('ACCESS') or die();
 if ($_GET['action'] == 'save') {
 	$sql = "UPDATE `answers` SET answer = '".addslashes($_POST['text'])."' WHERE id = ".intval($_GET['id'])." LIMIT 1";
  	if (mysql_query($sql)) {
-		print '<p class="erok">РљРѕРјРјРµРЅС‚Р°СЂРёР№ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР° Р±С‹Р» СѓСЃРїРµС€РЅРѕ РѕР±РЅРѕРІР»С‘РЅ!</p>';
+		print '<p class="erok">Комментарий администратора был успешно обновлён!</p>';
 	} else {
-		print '<p class="er">РџСЂРѕРёР·РѕС€Р»Р° РѕС€РёР±РєР° РїСЂРё Р·Р°РїРёСЃРё РґР°РЅРЅС‹С… РІ Р‘Р”</p>';
+		print '<p class="er">Произошла ошибка при записи данных в БД</p>';
 	}
 }
 
@@ -47,7 +47,7 @@ if (isset($_GET['id'])) {
 	});
 </script>
 <FIELDSET>
-<LEGEND><b>Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ РєРѕРјРјРµРЅС‚Р°СЂРёСЏ Рє РѕС‚Р·С‹РІСѓ:</b></LEGEND>
+<LEGEND><b>Редактирование комментария к отзыву:</b></LEGEND>
 <table bgcolor="#eeeeee" width="612" align="center" border="0" style="border: solid #cccccc 1px; width: 612px;">
 <form action="?p=admin_answers&action=save&id=<?php print intval($_GET['id']); ?>" method="post" name="mainForm">
 <td>
@@ -56,13 +56,13 @@ if (isset($_GET['id'])) {
 </table>
 <table align="center" width="624" border="0">
 	<tr>
-		<td align="right"><input type="image" src="images/save.png" width="24" height="24" border="0" title="РЎРѕС…СЂР°РЅРёС‚СЊ!" /></td>
+		<td align="right"><input type="image" src="images/save.png" width="24" height="24" border="0" title="Сохранить!" /></td>
 	</tr>
 </table>
 </form>
 </FIELDSET>
 <?php
 } else {
-	print '<p class="er">РќРѕРјРµСЂ Р·Р°РїРёСЃРё РЅРµ Р·Р°РґР°РЅ!</p>';
+	print '<p class="er">Номер записи не задан!</p>';
 }
 ?>

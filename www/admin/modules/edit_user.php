@@ -11,7 +11,10 @@ if($_GET[action] == "add") {
 	$pe			= htmlspecialchars($_POST['pe'], ENT_QUOTES, '');
 	$skype		= htmlspecialchars($_POST['skype'], ENT_QUOTES, '');
 	$icq		= htmlspecialchars($_POST['icq'], ENT_QUOTES, '');
-
+	$currency	= intval($_POST['currency']);
+	$phone		= gs_html($_POST['phone']);
+	$social		= gs_html($_POST['social']);
+	$bank		= gs_html($_POST['bank']);
 
 	if($pass && $repass) {
 
@@ -27,7 +30,7 @@ if($_GET[action] == "add") {
 		if(!preg_match("/^[a-z0-9_.-]{1,20}@(([a-z0-9-]+\.)+(com|net|org|mil|edu|gov|arpa|info|biz|[a-z]{2})|[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})$/is",$mail)) {
 			print "<p class=\"er\">Введите правильный e-mail!</p>";
 		} else {
-			mysql_query('UPDATE users SET mail = "'.$mail.'", comment = "'.$com.'", balance = balance + '.sprintf("%01.2f", $_POST['pmbal']).', bonus = bonus + '.sprintf("%01.2f", $_POST['bonus']).', pm = "'.$pm.'", pe = "'.$pe.'", skype = "'.$skype.'", icq = "'.$icq.'", ref_percent = '.sprintf("%01.2f", $_POST['ref_percent']).' WHERE id = '.intval($_GET['id']).' LIMIT 1');
+			mysql_query('UPDATE users SET currency = '.$currency.', phone = "'.$phone.'", social = "'.$social.'", bank = "'.$bank.'", mail = "'.$mail.'", comment = "'.$com.'", balance = balance + '.sprintf("%01.2f", $_POST['pmbal']).', bonus = bonus + '.sprintf("%01.2f", $_POST['bonus']).', pm = "'.$pm.'", pe = "'.$pe.'", skype = "'.$skype.'", icq = "'.$icq.'", ref_percent = '.sprintf("%01.2f", $_POST['ref_percent']).' WHERE id = '.intval($_GET['id']).' LIMIT 1');
 			print "<p class=\"erok\">Данные сохранены!</p>";
 
 			if($_POST['pmbal'] != 0.00) {
@@ -76,6 +79,10 @@ $rows = mysql_fetch_array($get_user);
  $pm			= $rows['pm'];
  $pe			= $rows['pe'];
  $skype			= $rows['skype'];
+ $currency		= $rows['currency'];
+ $phone			= $rows['phone'];
+ $social		= $rows['social'];
+ $bank			= $rows['bank'];
  $icq			= $rows['icq'];
  $ref_percent	= $rows['ref_percent'];
 
@@ -105,6 +112,32 @@ $country = getCOUNTRY($rows['ip']);
 <tr bgcolor="#dddddd">
 	<td><b>ICQ UIN</b>:</td>
 	<td align="right"><input style="width: 480px;" type="text" name="icq" size="70" maxlength="20" value="<?php print $icq; ?>" /></td>
+</tr>
+<tr bgcolor="#eeeeee">
+	<td><b>Валюта</b>:</td>
+	<td align="right"><select name="currency">
+<?php
+$sql	 = 'SELECT `id`, `style`, `name` FROM `currency`';
+$rs		 = mysql_query($sql);
+while($a2 = mysql_fetch_array($rs)) {
+	print '<option value="'.$a2['id'].'"';
+	if($currency == $a2['id']) { print ' selected'; }
+	print '>'.$a2['name'].'</option>';
+}
+?>
+					</select></td>
+</tr>
+<tr bgcolor="#dddddd">
+	<td><b>Телефон</b>:</td>
+	<td align="right"><input style="width: 480px;" type="text" name="phone" size="70" maxlength="50" value="<?php print $phone; ?>" /></td>
+</tr>
+<tr bgcolor="#eeeeee">
+	<td><b>Соц. сеть</b>:</td>
+	<td align="right"><input style="width: 480px;" type="text" name="social" size="70" maxlength="250" value="<?php print $social; ?>" /></td>
+</tr>
+<tr bgcolor="#dddddd">
+	<td><b>Реквизиты</b>:</td>
+	<td align="right"><input style="width: 480px;" type="text" name="bank" size="70" maxlength="250" value="<?php print $bank; ?>" /></td>
 </tr>
 <tr bgcolor="#eeeeee">
 	<td><b>Баланс</b> [<?php print $pmbal; ?>]:</td>

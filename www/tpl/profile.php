@@ -1,6 +1,22 @@
 <?php defined('ACCESS') or die(); ?>
 <form action="/profile/?action=save" method="post">
 <table align="center" width="350" border="0" cellpadding="2" cellspacing="1">
+<?php if($mycurrency == 1) { ?>
+	<tr>
+		<td>Ваша валюта: </td>
+		<td align="right">					<select name="currency">
+<?php
+$sql	 = 'SELECT `id`, `style`, `name` FROM `currency`';
+$rs		 = mysql_query($sql);
+while($a2 = mysql_fetch_array($rs)) {
+	print '<option value="'.$a2['id'].'"';
+	if($mycurrency == $a2['id']) { print ' selected'; }
+	print '>'.$a2['name'].'</option>';
+}
+?>
+					</select></td>
+	</tr>
+<?php } ?>
 	<tr>
 		<td><?php print $lang['password']; ?>: </td>
 		<td align="right"><input type='password' name='pass_1' size="30" /></td>
@@ -20,6 +36,18 @@
 	<tr>
 		<td>ICQ UIN:</td>
 		<td align="right"><input type='text' name='icq' value='<?php print $a['icq']; ?>' size="30" maxlength="20" /></td>
+	</tr>
+	<tr>
+		<td>Телефон:</td>
+		<td align="right"><input type='text' name='phone' value='<?php print $a['phone']; ?>' size="30" maxlength="20" /></td>
+	</tr>
+	<tr>
+		<td>Соц. сеть:</td>
+		<td align="right"><input type='text' name='social' value='<?php print $a['social']; ?>' size="30" maxlength="250" /></td>
+	</tr>
+	<tr>
+		<td>Реквизиты:</td>
+		<td align="right"><input type='text' name='bank' value='<?php print $a['bank']; ?>' size="30" maxlength="250" /></td>
 	</tr>
 <?php
 if($cfgPerfect) {	

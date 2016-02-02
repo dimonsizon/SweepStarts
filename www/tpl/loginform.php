@@ -1,4 +1,19 @@
 <?php
+$result2	= mysql_query("SELECT `currency` FROM `users` WHERE `id` = ".$user_id." LIMIT 1");
+$row		= mysql_fetch_array($result2);
+$mycurrency = $row['currency'];
+
+function mycurrency($id) {
+
+	$get_conf	= mysql_query("SELECT `style` FROM `currency` WHERE `id` = ".$id." LIMIT 1");
+	$row		= mysql_fetch_array($get_conf);
+	$currency	= $row['style'];
+
+	return $currency;
+}
+
+$mycur = mycurrency($mycurrency);
+
 if(!$login) {
 ?>
 	<table align="center" cellpadding="1" cellspacing="0">
@@ -60,7 +75,7 @@ if(!$login) {
 	//	print "<div class=\"left\">".$lang['balance'].":</div><div class=\"right\"><b>".$balance."</b> ".$moneycurr."</div><div class=\"clear\"></div>
 	//	<div class=\"left\"><font color=\"#666666\">".$lang['balance']." BONUS:</div><div class=\"right\"><b>".$bonusbalance."</b> ".$moneycurr."</font></div><div class=\"clear\"></div></p>";
 	//} else {
-	//	print $lang['balance'].": <b>".$balance."</b> ".$moneycurr."</p>";
+	//	print $lang['balance'].": <b>".$balance."</b> ".$mycur."</p>";
 	//}
 
 	//это странный автоматический счетчик, который был слева http://grab.by/NKJ0

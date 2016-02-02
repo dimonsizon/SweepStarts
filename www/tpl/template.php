@@ -52,18 +52,20 @@ if($ref) {
 	
 		<div class="pull-right">
 			<div class="user-block text-right">
+			<?php if($login) { ?>
 				<span class=""><i class="fa fa-user"></i> <span><?php print $login;?></span></span>
 				<span class="balans">
 					<i class="fa fa-usd"></i> 
 					<?php
 						if(cfgSET('cfgBonusBal') == "on") {
-							print "<span> ".$balance." ".$moneycurr."</span>
-							<span class=\"bonus-bal\">BONUS: ".$bonusbalance." ".$moneycurr."</span>";
+							print "<span> ".$balance." ".$mycur."</span>
+							<span class=\"bonus-bal\">BONUS: ".$bonusbalance." ".$mycur."</span>";
 						} else {
-							print "<span>".$balance."</span> ".$moneycurr."</p>";
+							print "<span>".$balance."</span> ".$mycur."</p>";
 						}				
 					?>
 				</span>
+			<?php }?>
 			</div>
 			
 			<nav id="menu" class="nav-bar">

@@ -75,7 +75,7 @@ while($row = mysql_fetch_array($result)) {
 		<th width="90"><b>Последний&nbsp;IP</b></th>
 		<th width="55"><b>Страна</b></th>
 		<th width="55"><b>Статус</b></th>
-		<th width="160"><b>EDIT</b></th>
+		<th width="180"><b>EDIT</b></th>
 	</tr>
 <?php
 function users_list($pg, $num, $query) {
@@ -120,6 +120,9 @@ function users_list($pg, $num, $query) {
 			case 3:
 				print "<img src=\"images/ban.png\" width=\"16\" height=\"16\" border=\"0\" alt=\"Заблокированный\">";
 				break;
+			case 4:
+				print "<img src=\"images/hranitel.png\" width=\"16\" height=\"16\" border=\"0\" alt=\"Хранитель\">";
+				break;
 			}
 
 			print "</td>
@@ -128,16 +131,19 @@ function users_list($pg, $num, $query) {
 			switch ($row[status])
 			{
 			case 0:
-				print '<a href="?p=users&pst=change_status&id='.$row[id].'&status=2"><img src="images/moder.png" width="16" height="16" border="0" alt="Сделать модером"></a> <a href="?p=users&pst=change_status&id='.$row[id].'&status=1"><img src="images/admin.png" width="16" height="16" border="0" alt="Сделать админом"></a> <a href="?p=users&pst=change_status&id='.$row[id].'&status=3"><img src="images/ban.png" width="16" height="16" border="0" alt="Закрыть доступ"></a>';
+				print '<a href="?p=users&pst=change_status&id='.$row[id].'&status=2"><img src="images/moder.png" width="16" height="16" border="0" alt="Сделать модером"></a> <a href="?p=users&pst=change_status&id='.$row[id].'&status=1"><img src="images/admin.png" width="16" height="16" border="0" alt="Сделать админом"></a> <a href="?p=users&pst=change_status&id='.$row[id].'&status=4"><img src="images/hranitel.png" width="16" height="16" border="0" alt="Сделать хранителем"></a> <a href="?p=users&pst=change_status&id='.$row[id].'&status=3"><img src="images/ban.png" width="16" height="16" border="0" alt="Закрыть доступ"></a>';
 				break;
 			case 1:
-				print '<a href="?p=users&pst=change_status&id='.$row[id].'&status=0"><img src="images/user.png" width="16" height="16" border="0" alt="Сделать юзером"></a> <a href="?p=users&pst=change_status&id='.$row[id].'&status=2"><img src="images/moder.png" width="16" height="16" border="0" alt="Сделать модером"></a> <a href="?p=users&pst=change_status&id='.$row[id].'&status=3"><img src="images/ban.png" width="16" height="16" border="0" alt="Закрыть доступ"></a>';
+				print '<a href="?p=users&pst=change_status&id='.$row[id].'&status=0"><img src="images/user.png" width="16" height="16" border="0" alt="Сделать юзером"></a> <a href="?p=users&pst=change_status&id='.$row[id].'&status=2"><img src="images/moder.png" width="16" height="16" border="0" alt="Сделать модером"></a> <a href="?p=users&pst=change_status&id='.$row[id].'&status=4"><img src="images/hranitel.png" width="16" height="16" border="0" alt="Сделать хранителем"></a> <a href="?p=users&pst=change_status&id='.$row[id].'&status=3"><img src="images/ban.png" width="16" height="16" border="0" alt="Закрыть доступ"></a>';
 				break;
 			case 2:
-				print '<a href="?p=users&pst=change_status&id='.$row[id].'&status=0"><img src="images/user.png" width="16" height="16" border="0" alt="Сделать юзером"></a> <a href="?p=users&pst=change_status&id='.$row[id].'&status=1"><img src="images/admin.png" width="16" height="16" border="0" alt="Сделать админом"></a> <a href="?p=users&pst=change_status&id='.$row[id].'&status=3"><img src="images/ban.png" width="16" height="16" border="0" alt="Закрыть доступ"></a>';
+				print '<a href="?p=users&pst=change_status&id='.$row[id].'&status=0"><img src="images/user.png" width="16" height="16" border="0" alt="Сделать юзером"></a> <a href="?p=users&pst=change_status&id='.$row[id].'&status=1"><img src="images/admin.png" width="16" height="16" border="0" alt="Сделать админом"></a> <a href="?p=users&pst=change_status&id='.$row[id].'&status=4"><img src="images/hranitel.png" width="16" height="16" border="0" alt="Сделать хранителем"></a> <a href="?p=users&pst=change_status&id='.$row[id].'&status=3"><img src="images/ban.png" width="16" height="16" border="0" alt="Закрыть доступ"></a>';
 				break;
 			case 3:
-				print '<a href="?p=users&pst=change_status&id='.$row[id].'&status=0"><img src="images/user.png" width="16" height="16" border="0" alt="Разблокировать"></a> <a href="?p=users&pst=change_status&id='.$row[id].'&status=2"><img src="images/moder.png" width="16" height="16" border="0" alt="Сделать модером"></a> <a href="?p=users&pst=change_status&id='.$row[id].'&status=1"><img src="images/admin.png" width="16" height="16" border="0" alt="Сделать админом"></a>';
+				print '<a href="?p=users&pst=change_status&id='.$row[id].'&status=0"><img src="images/user.png" width="16" height="16" border="0" alt="Разблокировать"></a> <a href="?p=users&pst=change_status&id='.$row[id].'&status=2"><img src="images/moder.png" width="16" height="16" border="0" alt="Сделать модером"></a> <a href="?p=users&pst=change_status&id='.$row[id].'&status=4"><img src="images/hranitel.png" width="16" height="16" border="0" alt="Сделать хранителем"></a> <a href="?p=users&pst=change_status&id='.$row[id].'&status=1"><img src="images/admin.png" width="16" height="16" border="0" alt="Сделать админом"></a>';
+				break;
+			case 4:
+				print '<a href="?p=users&pst=change_status&id='.$row[id].'&status=0"><img src="images/user.png" width="16" height="16" border="0" alt="Сделать юзером"></a> <a href="?p=users&pst=change_status&id='.$row[id].'&status=2"><img src="images/moder.png" width="16" height="16" border="0" alt="Сделать модером"></a> <a href="?p=users&pst=change_status&id='.$row[id].'&status=1"><img src="images/admin.png" width="16" height="16" border="0" alt="Сделать админом"></a> <a href="?p=users&pst=change_status&id='.$row[id].'&status=3"><img src="images/ban.png" width="16" height="16" border="0" alt="Закрыть доступ"></a>';
 				break;
 			}
 
