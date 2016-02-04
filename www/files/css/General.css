@@ -17,7 +17,7 @@ h3.center-title {
     .table-content th {
         padding: 7px 5px;
         text-align: left; 
-        font-weight: normal;
+        /*font-weight: normal;*/
         background-color: #eee;       
     }
  
