@@ -46,8 +46,8 @@ while($a2 = mysql_fetch_array($rs)) {
 		<td align="right"><input type='text' name='social' value='<?php print $a['social']; ?>' size="30" maxlength="250" /></td>
 	</tr>
 	<tr>
-		<td>Реквизиты:</td>
-		<td align="right"><input type='text' name='bank' value='<?php print $a['bank']; ?>' size="30" maxlength="250" /></td>
+		<td>Название банка:</td>
+		<td align="right"><input type='text' name='bankName' value='<?php print $a['bankName']; ?>' size="30" maxlength="250" /></td>
 	</tr>
 <?php
 if($cfgPerfect) {	

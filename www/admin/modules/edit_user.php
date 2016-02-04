@@ -14,7 +14,7 @@ if($_GET[action] == "add") {
 	$currency	= intval($_POST['currency']);
 	$phone		= gs_html($_POST['phone']);
 	$social		= gs_html($_POST['social']);
-	$bank		= gs_html($_POST['bank']);
+	$bankName		= gs_html($_POST['bankName']);
 
 	if($pass && $repass) {
 
@@ -30,7 +30,7 @@ if($_GET[action] == "add") {
 		if(!preg_match("/^[a-z0-9_.-]{1,20}@(([a-z0-9-]+\.)+(com|net|org|mil|edu|gov|arpa|info|biz|[a-z]{2})|[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})$/is",$mail)) {
 			print "<p class=\"er\">Введите правильный e-mail!</p>";
 		} else {
-			mysql_query('UPDATE users SET currency = '.$currency.', phone = "'.$phone.'", social = "'.$social.'", bank = "'.$bank.'", mail = "'.$mail.'", comment = "'.$com.'", balance = balance + '.sprintf("%01.2f", $_POST['pmbal']).', bonus = bonus + '.sprintf("%01.2f", $_POST['bonus']).', pm = "'.$pm.'", pe = "'.$pe.'", skype = "'.$skype.'", icq = "'.$icq.'", ref_percent = '.sprintf("%01.2f", $_POST['ref_percent']).' WHERE id = '.intval($_GET['id']).' LIMIT 1');
+			mysql_query('UPDATE users SET currency = '.$currency.', phone = "'.$phone.'", social = "'.$social.'", bankName = "'.$bankName.'", mail = "'.$mail.'", comment = "'.$com.'", balance = balance + '.sprintf("%01.2f", $_POST['pmbal']).', bonus = bonus + '.sprintf("%01.2f", $_POST['bonus']).', pm = "'.$pm.'", pe = "'.$pe.'", skype = "'.$skype.'", icq = "'.$icq.'", ref_percent = '.sprintf("%01.2f", $_POST['ref_percent']).' WHERE id = '.intval($_GET['id']).' LIMIT 1');
 			print "<p class=\"erok\">Данные сохранены!</p>";
 
 			if($_POST['pmbal'] != 0.00) {
@@ -82,7 +82,7 @@ $rows = mysql_fetch_array($get_user);
  $currency		= $rows['currency'];
  $phone			= $rows['phone'];
  $social		= $rows['social'];
- $bank			= $rows['bank'];
+ $bankName			= $rows['bankName'];
  $icq			= $rows['icq'];
  $ref_percent	= $rows['ref_percent'];
 
@@ -136,8 +136,8 @@ while($a2 = mysql_fetch_array($rs)) {
 	<td align="right"><input style="width: 480px;" type="text" name="social" size="70" maxlength="250" value="<?php print $social; ?>" /></td>
 </tr>
 <tr bgcolor="#dddddd">
-	<td><b>Реквизиты</b>:</td>
-	<td align="right"><input style="width: 480px;" type="text" name="bank" size="70" maxlength="250" value="<?php print $bank; ?>" /></td>
+	<td><b>Название банка</b>:</td>
+	<td align="right"><input style="width: 480px;" type="text" name="bankName" size="70" maxlength="250" value="<?php print $bankName; ?>" /></td>
 </tr>
 <tr bgcolor="#eeeeee">
 	<td><b>Баланс</b> [<?php print $pmbal; ?>]:</td>
