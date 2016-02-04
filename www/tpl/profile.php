@@ -49,6 +49,14 @@ while($a2 = mysql_fetch_array($rs)) {
 		<td>Название банка:</td>
 		<td align="right"><input type='text' name='bankName' value='<?php print $a['bankName']; ?>' size="30" maxlength="250" /></td>
 	</tr>
+	<tr>
+		<td>Номер карты:</td>
+		<td align="right"><input type='text' name='bankCardNumber' value='<?php print $a['bankCardNumber']; ?>' size="30" maxlength="250" /></td>
+	</tr>
+	<tr>
+		<td>Получатель:</td>
+		<td align="right"><input type='text' name='bankUserName' value='<?php print $a['bankUserName']; ?>' size="30" maxlength="250" /></td>
+	</tr>
 <?php
 if($cfgPerfect) {	
 ?>

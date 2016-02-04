@@ -15,6 +15,8 @@ if($_GET[action] == "add") {
 	$phone		= gs_html($_POST['phone']);
 	$social		= gs_html($_POST['social']);
 	$bankName		= gs_html($_POST['bankName']);
+	$bankCardNumber		= gs_html($_POST['bankCardNumber']);
+	$bankUserName		= gs_html($_POST['bankUserName']);
 
 	if($pass && $repass) {
 
@@ -30,7 +32,7 @@ if($_GET[action] == "add") {
 		if(!preg_match("/^[a-z0-9_.-]{1,20}@(([a-z0-9-]+\.)+(com|net|org|mil|edu|gov|arpa|info|biz|[a-z]{2})|[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})$/is",$mail)) {
 			print "<p class=\"er\">Введите правильный e-mail!</p>";
 		} else {
-			mysql_query('UPDATE users SET currency = '.$currency.', phone = "'.$phone.'", social = "'.$social.'", bankName = "'.$bankName.'", mail = "'.$mail.'", comment = "'.$com.'", balance = balance + '.sprintf("%01.2f", $_POST['pmbal']).', bonus = bonus + '.sprintf("%01.2f", $_POST['bonus']).', pm = "'.$pm.'", pe = "'.$pe.'", skype = "'.$skype.'", icq = "'.$icq.'", ref_percent = '.sprintf("%01.2f", $_POST['ref_percent']).' WHERE id = '.intval($_GET['id']).' LIMIT 1');
+			mysql_query('UPDATE users SET currency = '.$currency.', phone = "'.$phone.'", social = "'.$social.'", bankName = "'.$bankName.'", bankCardNumber = "'.$bankCardNumber.'", bankUserName = "'.$bankUserName.'", mail = "'.$mail.'", comment = "'.$com.'", balance = balance + '.sprintf("%01.2f", $_POST['pmbal']).', bonus = bonus + '.sprintf("%01.2f", $_POST['bonus']).', pm = "'.$pm.'", pe = "'.$pe.'", skype = "'.$skype.'", icq = "'.$icq.'", ref_percent = '.sprintf("%01.2f", $_POST['ref_percent']).' WHERE id = '.intval($_GET['id']).' LIMIT 1');
 			print "<p class=\"erok\">Данные сохранены!</p>";
 
 			if($_POST['pmbal'] != 0.00) {
@@ -83,6 +85,8 @@ $rows = mysql_fetch_array($get_user);
  $phone			= $rows['phone'];
  $social		= $rows['social'];
  $bankName			= $rows['bankName'];
+ $bankCardNumber			= $rows['bankCardNumber'];
+ $bankUserName			= $rows['bankUserName'];
  $icq			= $rows['icq'];
  $ref_percent	= $rows['ref_percent'];
 
@@ -138,6 +142,14 @@ while($a2 = mysql_fetch_array($rs)) {
 <tr bgcolor="#dddddd">
 	<td><b>Название банка</b>:</td>
 	<td align="right"><input style="width: 480px;" type="text" name="bankName" size="70" maxlength="250" value="<?php print $bankName; ?>" /></td>
+</tr>
+<tr bgcolor="#dddddd">
+	<td><b>Номер карты</b>:</td>
+	<td align="right"><input style="width: 480px;" type="text" name="bankCardNumber" size="70" maxlength="250" value="<?php print $bankCardNumber; ?>" /></td>
+</tr>
+<tr bgcolor="#dddddd">
+	<td><b>Получатель</b>:</td>
+	<td align="right"><input style="width: 480px;" type="text" name="bankUserName" size="70" maxlength="250" value="<?php print $bankUserName; ?>" /></td>
 </tr>
 <tr bgcolor="#eeeeee">
 	<td><b>Баланс</b> [<?php print $pmbal; ?>]:</td>
