@@ -62,9 +62,13 @@ function PrintRef($refid, $i, $c) {
 
 			if($i == 1) {
 
-				print "<tr bgcolor=\"#ffffff\" align=\"center\"><td>".$n."</td><td align=\"left\">".$a['login']."</font></td><td>".$a['ref_money']; 
-				if($dep) { print " <font color=\"green\">активен</font>"; } else { print " <font color=\"orange\">не активен</font>"; }
-				print "</td></tr>";
+				print "<tr bgcolor=\"#ffffff\" align=\"center\">
+					<td>".$n."</td>
+					<td align=\"left\">".$a['login']."</font></td>
+					<td>".$a['ref_money']; 
+						if($dep) { print " <font color=\"green\">активен</font>"; } else { print " <font color=\"orange\">не активен</font>"; }
+					print "</td>
+				</tr>";
 
 				if($i <= $c) {
 					PrintRef($a['id'], intval($i + 1), $c);
@@ -72,8 +76,15 @@ function PrintRef($refid, $i, $c) {
 
 			} elseif($c >= $i) {
 
-				print "<tr bgcolor=\"#ffffff\" align=\"center\"><td></td><td align=\"left\" style=\"padding-left: ".$i."0px;\"><font color=\"#999999\">» ".$a['login']."</font></td><td>-"; if($dep) { print " <font color=\"green\">активен</font>"; } else { print " <font color=\"orange\">не активен</font>"; }
-				print "</td></tr>";
+				print "<tr bgcolor=\"#ffffff\" align=\"center\">
+					<td></td>
+					<td align=\"left\" style=\"padding-left: ".$i."0px;\">
+						<font color=\"#999999\">» ".$a['login']."</font>
+					</td>
+					<td>-"; 
+						if($dep) { print " <font color=\"green\">активен</font>"; } else { print " <font color=\"orange\">не активен</font>"; }
+					print "</td>
+				</tr>";
 
 				if($i <= $c) {
 					PrintRef($a['id'], intval($i + 1), $c);
