@@ -44,7 +44,8 @@ h3.center-title {
             display: block;
         }
 
-        .form-container .form-field input.text-input {
+        .form-container .form-field input.text-input,
+        .form-container .form-field select {
             width: 100%;
         }
 
@@ -80,6 +81,14 @@ h3.center-title {
        font-size: 16px;
        text-align: center;
    }
+
+/***************enter-balance********************/
+
+.enter-balance .form-container {
+    /*margin: 0 auto;*/
+    width: 350px;
+}
+
 
 /****************Open deposite*****************/
 
