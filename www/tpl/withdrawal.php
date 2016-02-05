@@ -13,35 +13,50 @@ defined('ACCESS') or die();
 		} else if(document.getElementById('ps').value == 2) {
 			document.getElementById("purse").value = '<?php if($r['pe']) { print $r['pe']; } else { print $lang['msg_16']; } ?>';
 			document.getElementById("purse").disabled = true;
-		} else {
+		} else if(document.getElementById('ps').value == 3) { //bank card
+			document.getElementById("purse").value = 'Банковская карта';
+			document.getElementById("purse").disabled = true;
+		}else {
 			document.getElementById("purse").value = '';
 			document.getElementById("purse").disabled = false;
 		}
 	}
 //-->
 </script>
-<FIELDSET style="border: solid #666666 1px; margin-bottom: 5px;">
-<LEGEND><b><?php print $lang['outputform']; ?></b>:</LEGEND>
-	<table align="center">
-	<form action="/withdrawal/?action=save" method="post">
-	<tr><td><b><?php print $lang['sum']; ?></b>: </td><td align="right"><input id="sum" style="width: 250px;" type='text' name='sum' value='<?php print $r['balance']; ?>' size="30" maxlength="7" /></td></tr>
-	<tr><td><b><?php print $lang['paysystem']; ?></b>: </td><td align="right"><select id="ps" onChange="CheBal();" style="width: 250px; margin-right: 0px;" name="ps">
-<?php
-if($r['pm']) {
-	print '<option value="1">PerfectMoney</option>';
-}
 
-$result	= mysql_query("SELECT * FROM `paysystems` WHERE id != 1 ORDER BY id ASC");
-while($row = mysql_fetch_array($result)) {
-	print '<option value="'.$row['id'].'">'.$row['name'].'</option> ';
-}
-?>
-	</select></td></tr>
-	<tr><td><b><?php print $lang['schet']; ?>:</b> </td><td align="right"><input style="width: 250px;" type='text' id="purse" name='purse' value='' size="30" maxlength="30" /></td></tr>
-	<tr><td></td><td align="right"><input class="subm" type='submit' name='submit' value=' <?php print $lang['send']; ?> ' /></td></tr>
-	</form>
-	</table>
-</FIELDSET>
+<form action="/withdrawal/?action=save" method="post">
+	<div class="form-container">
+		<div class="form-field">
+			<label><?php print $lang['sum']; ?>:</label>
+			<input id="sum" class="text-input" type='text' name='sum' value='<?php print $r['balance']; ?>' size="30" maxlength="7" />
+		</div>
+		<div class="form-field">
+			<label><?php print $lang['paysystem']; ?>:</label>
+			<select id="ps" onChange="CheBal();" name="ps">
+				<?php
+				if($r['pm']) {
+					print '<option value="1">PerfectMoney</option>';
+				}
+
+				$result	= mysql_query("SELECT * FROM `paysystems` WHERE id != 1 ORDER BY id ASC");
+				while($row = mysql_fetch_array($result)) {
+					if($row['id'] == 3) { //only bank card
+						print '<option value="'.$row['id'].'">'.$row['name'].'</option> ';
+					}
+				}
+				?>
+			</select>
+		</div>
+		<div class="form-field">
+			<label><?php print $lang['schet']; ?>:</label>
+			<input id="purse" class="text-input" type='text' name='purse' value='' size="30" maxlength="30" />
+		</div>
+		<div class="form-buttons">
+			<input class="subm" type='submit' name='submit' value=' <?php print $lang['send']; ?> ' />
+		</div>
+	</div>
+</form>
+
 <script language="JavaScript">
 <!--
 	CheBal();

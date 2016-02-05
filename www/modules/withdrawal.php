@@ -2,7 +2,7 @@
 defined('ACCESS') or die();
 if ($login) {
 
-	$sql	= 'SELECT `pe`, `pm`, `balance`, `ref` FROM `users` WHERE `id` = '.$user_id.' LIMIT 1';
+	$sql	= 'SELECT `pe`, `pm`, `bankName`, `bankCardNumber`, `balance`, `ref` FROM `users` WHERE `id` = '.$user_id.' LIMIT 1';
 	$rs		= mysql_query($sql);
 	$r		= mysql_fetch_array($rs);
 
@@ -37,6 +37,8 @@ if ($login) {
 			$purse = $r['pm'];
 		} elseif(!$purse && $ps == 2) {
 			$purse = $r['pe'];
+		} elseif(!$purse && $ps == 3) {
+			$purse = $r['bankName'].' '.$r['bankCardNumber'];
 		}
 
 		if ($sum <= 0) {
