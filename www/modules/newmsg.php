@@ -81,8 +81,8 @@ if($toname) {
 
 ?>
 
-<FIELDSET style="border: solid #666666 1px; margin-bottom: 5px;">
-<LEGEND> <b>Форма создания нового тикета:</b> </LEGEND>
+
+<p> <b>Форма создания нового тикета:</b> </p>
 <form action="?action=send" method="post">
 <table align="center" cellpadding="1" cellspacing="1" border="0">
 	<tr>
@@ -106,7 +106,7 @@ if($toname) {
 </table>
 </form>
 <div id="msginfo"></div>
-</FIELDSET>
+
 <?php
 }
 ?>

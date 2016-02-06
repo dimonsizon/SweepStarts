@@ -44,9 +44,9 @@ if($login) {
 
 
 			print "<table bgcolor=\"#cccccc\" width=\"100%\" border=\"0\" cellpadding=\"3\" cellspacing=\"1\">
-			<tr bgcolor=\"#dddddd\">
+			<tr bgcolor=\"#f0f0f0\">
 				<td width=\"100\">От кого:</td>
-				<td>".$fromname."<div style=\"float: right;\" valign=\"middle\">";
+				<td>".$fromname."<div style=\"float: right; font-size: 14px;\" valign=\"middle\">";
 
 	if($pr == "0") {
 		print '<font color="green">низкий</font> ';
@@ -59,37 +59,37 @@ if($login) {
 	}
 
 	if($st != 3) {
-		print ' <a href="?id='.$id.'&ticket=off"><img src="/img/close_ico.png" width="16" height="16" border="0" alt="" title="Вопрос решен. ЗАКРЫТЬ ТИКЕТ!" /></a> ';
+		print ' <a href="?id='.$id.'&ticket=off"><i class="fa fa-lock" title="Вопрос решен. ЗАКРЫТЬ ТИКЕТ!"></i></a> ';
 	}
 
 	if($st == "0") {
-		print ' <img src="/img/wait_ico.png" width="16" height="16" border="0" alt="" title="Последнее сообщение от пользователя. Ожидает ответ от администрации." /> ';
+		print '<i class="fa fa-clock-o text-blue" title="Последнее сообщение от пользователя. Ожидает ответ от администрации."></i>';
 	} elseif($st == 1) {
-		print ' <img src="/img/userwait_ico.png" width="16" height="16" border="0" alt="" title="Последнее сообщение от администрации. Ожидает ответ от пользователя." /> ';
+		print '<i class="fa fa-hourglass-half text-success" title="Последнее сообщение от администрации. Ожидает ответ от пользователя."></i>';
 	} elseif($st == 3) {
-		print ' <img src="/img/close_ico.png" width="16" height="16" border="0" alt="" title="Вопрос решен. Тикет закрыт." /> ';
+		print '<i class="fa fa-lock" title="Вопрос решен. Тикет закрыт."></i>';
 	} else {
 		print " - ";
 	}
 
-			print "<a href=\"?id=".$id."\"><img src=\"/img/refresh_ico.png\" width=\"16\" height=\"16\" border=\"0\" alt=\"\" title=\"ОБНОВИТЬ\" /></a></div></td>
+			print " <a href=\"?id=".$id."\"><i class=\"fa fa-refresh\" title=\"Обновить\"></i></a></div></td>
 			</tr>
-			<tr bgcolor=\"#eeeeee\">
+			<tr bgcolor=\"#eee\">
 				<td>Кому:</td>
 				<td>".$ulogin."</td>
 			</tr>
-			<tr bgcolor=\"#dddddd\">
+			<tr bgcolor=\"#f0f0f0\">
 				<td>Дата:</td>
 				<td>".date("d.m.Y H:i", $date)."</td>
 			</tr>
-			<tr bgcolor=\"#eeeeee\">
+			<tr bgcolor=\"#eee\">
 				<td>Тема:</td>
 				<td><b>".$subject."</b></td>
 			</tr>
-			<tr height=\"3\" bgcolor=\"#dddddd\">
+			<tr height=\"3\" bgcolor=\"#f0f0f0\">
 				<td colspan=\"2\">";
 
-			if($com) { print 'Дополнительная информация: <font color="#000000">'.$com.'</font>'; }
+			if($com) { print 'Дополнительная информация: <font color="#333">'.$com.'</font>'; }
 
 			print "</td>
 			</tr>
@@ -117,7 +117,7 @@ if($login) {
 	$subject = $row['subject'];
 	mysql_query("UPDATE msgs SET `read` = 1 WHERE id = ".$row['id']." AND to_id = ".$user_id." LIMIT 1");
 	print '
-	<table width="100%" border="0" style="border: 1px solid #99ff99; background-color: #e4ffe4; padding: 4 4 4 4px; margin-bottom: 10px;">
+	<table width="100%" border="0" style="border: 1px solid #99ff99; background-color: #eee; padding: 4 4 4 4px; margin-bottom: 10px;">
 		<tr>
 			<td><div style="float: left;" id="'.$row['id'].'">'.date("d.m.Y H:i", $row['date']).' - <b>'.$row['from_name'].'</b> [ '.$subject.' ]</div>
 			<div style="float: right;"><img style="cursor: pointer;" onclick="if(confirm(\'Вы действительно хотите удалить сообщение?\')) top.location.href=\'?id='.intval($_GET['id']).'&did='.$row['id'].'&act=del\';" src="/img/cancel.png" width="16" height="16" border="0" alt="" title="Удалить!" /></div>
@@ -165,8 +165,8 @@ if($fromname2 == $login) {
 
 
 ?>
-<FIELDSET style="border: solid #666666 1px;">
-<LEGEND><b>Быстрый ответ на сообщение:</b></LEGEND>
+
+<p><b>Быстрый ответ на сообщение:</b></p>
 <form action="/newmsg/?action=send" method="post">
 <table width="100%" align="center" cellpadding="1" cellspacing="1" border="0">
 	<tr>
@@ -193,7 +193,7 @@ if($fromname2 == $login) {
 	</tr>
 </table>
 </form>
-</FIELDSET>
+
 <?php
 	}
 		} else {
