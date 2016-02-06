@@ -23,7 +23,7 @@ defined('ACCESS') or die();
 	}
 //-->
 </script>
-
+<div class="enter-balance">
 <form action="/withdrawal/?action=save" method="post">
 	<div class="form-container">
 		<div class="form-field">
@@ -80,7 +80,15 @@ defined('ACCESS') or die();
 		print "<p class=\"er\">".$lang['nodata']."</p>";
 	} else {
 
-		print "<table width=\"100%\" class=\"table-content\"><tr align=\"center\"><th style=\"padding: 3px;\"><b>#</b></th><th width=\"100\"><b>".$lang['date']."</b></th><th><b>".$lang['sum']."</b></th><th><b>".$lang['schet']."</b></th><th><b>".$lang['system']."</b></th><th><b>".$lang['status']."</b></th></tr>";
+		print "<table class=\"table-content\">
+			<tr>
+				<th>#</th>
+				<th>".$lang['date']."</th>
+				<th>".$lang['sum']."</th>
+				<th>".$lang['schet']."</th>
+				<th>".$lang['system']."</th>
+				<th>".$lang['status']."</th>
+			</tr>";
 
 		$i = 1;
 		$s = 0;
@@ -91,25 +99,26 @@ defined('ACCESS') or die();
 		$get_ps	= mysql_query("SELECT `name` FROM `paysystems` WHERE `id` = ".intval($row['paysys'])." LIMIT 1");
 		$rowps	= mysql_fetch_array($get_ps);
 
-		print "<tr".$bg." align=\"center\">
-		<td style=\"padding: 3px;\">".$row['id']."</td>
-		<td>".date("d.m.Y H:i", $row['date'])."</td>
-		<td>".$row['sum']." ".$moneycurr."</td>
-		<td><b>".$row['purse']."</b></td>
-		<td>".$rowps['name']."</td>
-		<td>";
+		print "<tr".$bg.">
+			<td>".$row['id']."</td>
+			<td>".date("d.m.Y H:i", $row['date'])."</td>
+			<td>".$row['sum']." ".$moneycurr."</td>
+			<td>".$row['purse']."</td>
+			<td>".$rowps['name']."</td>
+			<td class=\"status text-center\">";
 
-		if($row['status'] == 0) {
-			print '<span class="tool"><img src="/img/wait_ico.png" width="16" height="16" alt="" /><span class="tip">'.$lang['msg_03'].'</span></span> <span class="tool"><a href="/withdrawal/?cancel='.$row['id'].'"><img src="/img/no_ico.png" width="16" height="16" border="0" alt="" /></a><span class="tip">'.$lang['cancel'].'</span></span>';
-		} elseif($row['status'] == 2) {
-			print '<span class="tool"><img src="/img/yes_ico.png" width="16" height="16" alt="" /><span class="tip">'.$lang['msg_04'].'</span></span>';
-		} elseif($row['status'] == 6) {
-			print '<span class="tool"><img src="/img/cancel_ico.png" width="16" height="16" alt="" /><span class="tip">'.$lang['msg_05'].'</span></span>';
-		} else {
-			print '<span class="tool"><img src="/img/cancel_ico.png" width="16" height="16" alt="" /><span class="tip">'.$lang['msg_06'].'</span></span>';
-		}
+				if($row['status'] == 0) {
+					print '<span class="tool"><i class="fa fa-clock-o text-blue"></i><span class="tip">'.$lang['msg_03'].'</span></span> 
+					<span class="tool"><a href="/withdrawal/?cancel='.$row['id'].'"><i class="fa fa-undo text-error"></i></a><span class="tip">'.$lang['cancel'].'</span></span>';
+				} elseif($row['status'] == 2) {
+					print '<span class="tool"><i class="fa fa-check text-success"></i><span class="tip">'.$lang['msg_04'].'</span></span>';
+				} elseif($row['status'] == 6) {
+					print '<span class="tool"><i class="fa fa-ban text-error"></i><span class="tip">'.$lang['msg_05'].'</span></span>';
+				} else {
+					print '<span class="tool"><i class="fa fa-ban text-error"></i><span class="tip">'.$lang['msg_06'].'</span></span>';
+				}
 
-		print "</td>
+			print "</td>
 
 		</tr>";
 
@@ -117,8 +126,8 @@ defined('ACCESS') or die();
 			$s = $s + $row['sum'];
 		}
 
-		print "<tr><td class=\"tblbord\"></td><td align=\"right\" class=\"tblbord\"><b>".$lang['total'].":</b></td><td align=\"center\" class=\"tblbord\"><b>".$s."</b> ".$moneycurr."</td><td class=\"tblbord\"></td><td class=\"tblbord\"></td><td class=\"tblbord\"></td></tr></table>";
-
+		print "</table>
+		<p><b>".$lang['total'].": <b>".$s."</b> ".$moneycurr."</b></p>";
 	}
 
 	if ($p) {
@@ -131,3 +140,4 @@ defined('ACCESS') or die();
 	}
 	print "<div class=\"pages\"><b>".$lang['pages'].":  </b>".$pervp.$p2left.$p1left." <b>".$p."</b> ".$p1right.$p2right.$nextp."</div>";
 ?>
+</div>
