@@ -6,8 +6,10 @@
 }
 
 .center-panel {
+    margin-left: 250px;
+    width: 720px;
     min-height: 800px;
     padding: 10px;
     background-color: #fff;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
