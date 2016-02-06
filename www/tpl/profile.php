@@ -42,6 +42,7 @@
 			<label>Телефон:</label>
 			<input class="text-input" type='text' name='phone' value='<?php print $a['phone']; ?>' size="30" maxlength="20" />
 		</div>
+		<h4 class="top20">Банковские данные</h4>
 		<div class="form-field">
 			<label>Соц. сеть:</label>
 			<input class="text-input" type='text' name='social' value='<?php print $a['social']; ?>' size="30" maxlength="250" />
