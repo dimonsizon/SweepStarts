@@ -82,6 +82,11 @@ h3.center-title {
        text-align: center;
    }
 
+.form-container.profile-form {
+    margin: 0 auto;
+    width: 400px;
+}
+
 /***************enter-balance********************/
 
 .enter-balance .form-container {
