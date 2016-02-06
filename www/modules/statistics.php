@@ -31,7 +31,7 @@ if($login) {
 <tr>
 	<th><?php print $lang['date']; ?>:</th>
 	<th><?php print $lang['sum']; ?>:</th>
-	<th><?php print $lang['operation']; ?>:</th>
+	<th class="text-center" width="60"><?php print $lang['operation']; ?>:</th>
 </tr>
 <?php
 
@@ -55,7 +55,7 @@ if($login) {
 				print "<tr ".$bg.">
 				<td>".date("d.m.Y H:i", $a['date'])."</td>
 				<td>".$a['sum']."</td>
-				<td class=\"status\">";
+				<td class=\"status text-center\">";
 				if($a['type'] == 1) {
 					print '<span class="tool"><i class="fa fa-plus text-success"></i><span class="tip">'.$lang['opendeposit'].'</span></span>';
 				} elseif($a['type'] == 2) {
