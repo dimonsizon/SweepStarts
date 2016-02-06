@@ -19,12 +19,11 @@ if(!$login) {
 
 ?>
 <form action="/msg/?act=del" method="post">
-<table>
-<tr>
-	<td><img  src="/img/msg.png" width="16" height="16" border="0" alt="" /></td>
-	<td><a style="font-size: 14px;" href="/newmsg/"><b><?php print $lang['new_ticcet']; ?></b></a></td>
-</tr>
-</table>
+<p>
+	<i class="fa fa-envelope text-blue"></i>
+	<a style="font-size: 14px;" href="/newmsg/"><b><?php print $lang['new_ticcet']; ?></b></a>
+<p>
+
 <table class="table-content" cellpadding="1" cellspacing="1">
 <tr>
 	<th width="20"><b>+</b></th>
@@ -88,14 +87,14 @@ print '<tr bgcolor="#ffffff" height="19">
 	}
 
 print '</td>
-	<td align="center">';
+	<td class="status" align="center">';
 
 if($st == "0") {
-	print '<img src="/img/wait_ico.png" width="16" height="16" border="0" alt="" title="Последнее сообщение от пользователя. Ожидает ответ от администрации." />';
+	print '<i class="fa fa-clock-o text-blue" title="Последнее сообщение от пользователя. Ожидает ответ от администрации."></i>';
 } elseif($st == 1) {
-	print '<img src="/img/userwait_ico.png" width="16" height="16" border="0" alt="" title="Последнее сообщение от администрации. Ожидает ответ от пользователя." />';
+	print '<i class="fa fa-hourglass-half text-success" title="Последнее сообщение от администрации. Ожидает ответ от пользователя."></i>';
 } elseif($st == 3) {
-	print '<img src="/img/close_ico.png" width="16" height="16" border="0" alt="" title="Вопрос решен. Тикет закрыт." />';
+	print '<i class="fa fa-lock" title="Вопрос решен. Тикет закрыт."></i>';
 } else {
 	print "-";
 }
