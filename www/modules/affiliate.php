@@ -69,9 +69,9 @@ defined('ACCESS') or die();
 
 					if($i == 1) {
 
-						print "<tr bgcolor=\"#ffffff\" align=\"center\">
+						print "<tr>
 							<td>".$n."</td>
-							<td align=\"left\">".$a['login']."</font></td>
+							<td>".$a['login']."</font></td>
 							<td>".$a['ref_money']; 
 								if($dep) { print " <font color=\"green\">активен</font>"; } else { print " <font color=\"orange\">не активен</font>"; }
 							print "</td>
@@ -83,13 +83,13 @@ defined('ACCESS') or die();
 
 					} elseif($c >= $i) {
 
-						print "<tr bgcolor=\"#ffffff\" align=\"center\">
+						print "<tr>
 							<td></td>
-							<td align=\"left\" style=\"padding-left: ".$i."0px;\">
-								<font color=\"#999999\">» ".$a['login']."</font>
+							<td style=\"padding-left: ".$i."5px;\">
+								<font color=\"#999\"><i class=\"fa fa-user\"></i> ".$a['login']."</font>
 							</td>
-							<td>-"; 
-								if($dep) { print " <font color=\"green\">активен</font>"; } else { print " <font color=\"orange\">не активен</font>"; }
+							<td>"; 
+								if($dep) { print " <font color=\"green\">активен</font>"; } else { print " <font>не активен</font>"; }
 							print "</td>
 						</tr>";
 
@@ -117,7 +117,7 @@ defined('ACCESS') or die();
 					$m = $m + $a['ref_money'];
 				}
 
-				print "<tr align=\"center\">
+				print "<tr>
 					<td align=\"right\" colspan=\"2\"><b>".$lang['total'].":</b></td>
 					<td><b>".sprintf("%01.2f", $m)."</b></td>
 				</tr>";
