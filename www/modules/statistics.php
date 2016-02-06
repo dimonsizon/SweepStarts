@@ -14,18 +14,24 @@ if($login) {
 		$part = $part + $a['sum'];
 	}
 ?>
-<div class="left">
-	<div class="left priceperctxt"><?php print $lang['zarabotano']; ?> %:</div><div class="right priceperc"><?php print $dep.' '.$moneycurr; ?></div>
+<div>
+	<p>
+		<?php print $lang['zarabotano']; ?> %:
+		<b><?php print $dep.' '.$moneycurr; ?></b>
+	</p>
 </div>
-<div class="right">
-	<div class="left priceparttxt"><?php print $lang['partnerdoh']; ?>:</div><div class="right pricepart"><?php print $part.' '.$moneycurr; ?></div>
+<div>
+	<p>
+		<?php print $lang['partnerdoh']; ?>:
+		<b><?php print $part.' '.$moneycurr; ?></b>
+	</p>
 </div>
 
-<table width="100%" class="table-content">
-<tr align="center">
-	<th height="25"><b><?php print $lang['date']; ?>:</b></th>
-	<th><b><?php print $lang['sum']; ?>:</b></th>
-	<th><b><?php print $lang['operation']; ?>:</b></th>
+<table class="table-content statistic">
+<tr>
+	<th><?php print $lang['date']; ?>:</th>
+	<th><?php print $lang['sum']; ?>:</th>
+	<th><?php print $lang['operation']; ?>:</th>
 </tr>
 <?php
 
@@ -46,16 +52,16 @@ if($login) {
 
 			if($i % 2) { $bg = ""; } else { $bg = " bgcolor=\"#eeeeee\""; }
 
-				print "<tr ".$bg." align=\"center\">
+				print "<tr ".$bg.">
 				<td>".date("d.m.Y H:i", $a['date'])."</td>
 				<td>".$a['sum']."</td>
-				<td>";
+				<td class=\"status\">";
 				if($a['type'] == 1) {
-					print '<span class="tool"><img src="/img/deposit_ico.png" width="16" height="16" alt="'.$lang['opendeposit'].'" /><span class="tip">'.$lang['opendeposit'].'</span></span>';
+					print '<span class="tool"><i class="fa fa-plus text-success"></i><span class="tip">'.$lang['opendeposit'].'</span></span>';
 				} elseif($a['type'] == 2) {
-					print '<span class="tool"><img src="/img/partner_ico.png" width="16" height="16" alt="'.$lang['partnerdoh'].'" /><span class="tip">'.$lang['partnerdoh'].'</span></span>';
+					print '<span class="tool"><i class="fa fa-users text-blue"></i><span class="tip">'.$lang['partnerdoh'].'</span></span>';
 				} else {
-					print '<span class="tool"><img src="/img/percent_ico.png" width="16" height="16" alt="'.$lang['depositperc'].'" /><span class="tip">'.$lang['depositperc'].'</span></span>';
+					print '<span class="tool"><i class="fa fa-percent text-black"></i><span class="tip">'.$lang['depositperc'].'</span></span>';
 				}
 				print "</td>
 				</tr>";
@@ -67,7 +73,7 @@ if($login) {
 	} else {
 		print "<tr bgcolor=\"#ffffff\"><td colspan=\"3\" align=\"center\"><div class=\"warn\">".$lang['nodata']."!</div></td></tr>";
 	}
-	print "</table><hr />";
+	print "</table>";
 
 		if ($p) {
 			if($p != 1) { $pervp = "<a href=\"/statistics/?p=1\">лл</a>"; }
