@@ -6,6 +6,11 @@ h3.center-title {
     margin: 10px 0;
 }
 
+ul.list-items {
+    margin-left: 30px;
+    list-style: disc;
+}
+
 .top5 {
     margin-top: 5px;
 }
@@ -49,6 +54,10 @@ h3.center-title {
 /*******************Forms**********************/
 .form-container {
     /*padding: 10px;*/
+}
+
+.form-container.login-form {
+	padding: 10px;
 }
 
     .form-container .form-field {

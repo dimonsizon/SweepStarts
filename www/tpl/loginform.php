@@ -32,7 +32,7 @@ if(!$login) {
 	</tr>
 	</form>
 	</table>-->
-	<div class="form-container">
+	<div class="form-container login-form">
 		<form action="/login" method="post">
 			<div class="form-field">
 				<label><?php print $lang['login']; ?></label>
