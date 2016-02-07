@@ -62,40 +62,40 @@ function topics_list($page, $num, $status)
 	while ($row = mysql_fetch_array($result))
 	{
   		if ($status == 1) {
-			$admin_but  = "<a href=\"/admin/?p=admin_answers&id=".$row['id']."\"><img src=\"/admin/images/comment.png\" width=\"12\" height=\"12\" border=\"0\" alt=\"Комментировать\" /></a> ";
-			$admin_but .= "<a href=\"/admin/?p=edit_answers&id=".$row['id']."\"><img src=\"/admin/images/edit_ico.png\" width=\"12\" height=\"12\" border=\"0\" alt=\"Редактировать сообщение\" /></a> ";
-			$admin_but .= "<img style=\"cursor: pointer;\" onclick=\"if(confirm('Вы уверены?')) top.location.href='/admin/del/answers.php?id=".$row['id']."'\"; src=\"/admin/images/delite.png\" width=\"12\" height=\"12\" border=\"0\" alt=\"Удалить сообщение\" />";
+			$admin_but  = "<a href=\"/admin/?p=admin_answers&id=".$row['id']."\"><i class=\"fa fa-comment\" title=\"Комментировать\"></i></a> ";
+			$admin_but .= "<a href=\"/admin/?p=edit_answers&id=".$row['id']."\"><i class=\"fa fa-pencil\" title=\"Редактировать\"></i></a> ";
+			$admin_but .= "<a href=\"#\" onclick=\"if(confirm('Вы уверены?')) top.location.href='/admin/del/answers.php?id=".$row['id']."'\" ><i class=\"fa fa-trash\" title=\"Удалить сообщение\"></i></a>";
 			$admin_but .= " IP: ".$row['ip'];
 		} else {
 			$admin_but	= "";
 		}
 
 		if ($row['yes'] == 1) {
-			$smile = '<img src="/img/yes.png" width="16" height="16" border="0" alt="Положительный отзыв" title="Положительный отзыв" />';
-			$style = "border: 1px solid #99ff99; background-color: #e4ffe4; padding: 10px; margin-bottom: 10px; border-radius: 0 15px 0 15px;";
+			$smile = '<i class="fa fa-thumbs-up" title="Положительный отзыв"></i>';
+			$class = 'good-comment';
+			//$style = "border: 1px solid #99ff99; background-color: #e4ffe4; padding: 10px; margin-bottom: 10px; border-radius: 0 15px 0 15px;";
 		} else {
-			$smile = '<img src="/img/no.png" width="16" height="16" border="0" alt="Отрицательный отзыв" title="Отрицательный отзыв" />';
-			$style = "border: 1px solid #ff9999; background-color: #ffe4e4; padding: 10px; margin-bottom: 10px; border-radius: 0 15px 0 15px;";
+			$smile = '<i class="fa fa-thumbs-down" title="Отрицательный отзыв"></i>';
+			$class = 'bad-comment';
+			//$style = "border: 1px solid #ff9999; background-color: #ffe4e4; padding: 10px; margin-bottom: 10px; border-radius: 0 15px 0 15px;";
 		}
 
 
 
-print '
-	<table width="100%" border="0" style="'.$style.'">
-		<tr>
-			<td><h4>'.$smile.' <font color="#999999">'.date("d.m.Y H:i", $row['date']).'</font> - <b>'.$row['username'].'</b>';
-
-print ' '.$admin_but.'</h4>
-			<p align="justify">'.$row['text'].'</p>';
-
-		if($row['answer']) { print "<div style='border: 1px solid #ff9900; background-color: #feffee; padding: 5px; border-radius: 3px;'><i>Комментарий от администрации:</i><br /><font color=\"#660000\">".$row['answer']."</font></div>"; }
-
-print '
-			</td>
-		</tr>
-	</table><div class="hline" style="margin-bottom: 3px;"></div>
-';
-
+		print '<div class="comment '.$class.'">
+			<p><b>'.$row['username'].' </b>'.$smile.'</p>
+			
+			<div class=">';
+				print '<p class="comment-text">'.$row['text'].'</p>';
+			print '</div>
+			<div class="pull-right"><span class="admin-bt">'.$admin_but.'</span> <span class="text-gray">'.date("d.m.Y H:i", $row['date']).'</span></div>		
+		</div>';
+		if($row['answer']) { 
+			print "<div class=\"comment admin-comment\">
+				<i>Комментарий от администрации:</i><br />
+				<p class=\"comment-text\">".$row['answer']."</p>
+			</div>"; 
+		}
 	}
 
 
@@ -115,25 +115,39 @@ topics_list($p, 10, $status);
 if ($login) {
 // Форма добавления комментариев
 ?>
-<div class="hline"></div>
-<center>
-<table width="380" border="0" align="center">
+
+<div class="form-container add-comment-form">
 	<form action="/reviews/?action=send" method="post" name="msg_form">
-	<tr>
-		<td colspan="3">Текст сообщения:<br /><textarea style="width: 500px;" name="text" rows="7" cols="48"><?php print gs_html(substr($_POST['text'], 0, 10000)); ?></textarea></td>
-	</tr>
-	<tr>
-		<td><nobr style="line-height: 16px;">
-		<label><input class="check" type="radio" name="radio" value="1" checked /><img src="/img/yes.png" width="16" height="16" border="0" alt="Положительный отзыв" title="Положительный отзыв" /> <font color="green">положительно</font></label> -
-		<label><input class="check" type="radio" name="radio" value="2" /> <img src="/img/no.png" width="16" height="16" border="0" alt="Отрицательный отзыв" title="Отрицательный отзыв" /> <font color="red">отрицательно</font></label>
-		</nobr></td>
-		<td>
-		</td>
-		<td align="right"><input class="subm" type="submit" value="Отправить!" /></td>
-	</tr>
+		<div class="form-field">
+			<label>Текст сообщения:</label>
+			<textarea name="text" rows="4">
+				<?php print gs_html(substr($_POST['text'], 0, 10000)); ?>
+			</textarea>
+		</div>
+
+		<div class="comment-bt">
+			<div class="pull-left radio-bt">
+				<label>
+					<input class="check" type="radio" name="radio" value="1" checked />
+					<i class="fa fa-thumbs-up" title="Положительный отзыв"></i> 
+					<span>положительно</span>
+				</label>
+				<label>
+					<input class="check" type="radio" name="radio" value="2" /> 
+					<i class="fa fa-thumbs-down" title="Отрицательный отзыв"></i> 
+					<span>отрицательно</span>
+				</label>
+			</div>
+			
+			
+			<div class="pull-right">
+				<input class="subm" type="submit" value="Отправить" />
+			</div>
+			
+		</div>
 	</form>
-</table>
-</center>
+</div>
+
 <?php
 } else {
 	print '<p class="er">Для добавления отзывов вам необходимо авторизироваться!</p>';

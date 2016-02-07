@@ -67,6 +67,10 @@ table, td {
     color: #000;
 }
 
+.text-gray {
+    color: #999;
+}
+
 
 .text-center {
     text-align: center;
@@ -371,3 +375,45 @@ input[type="radio"] {
 .partner-list {
     margin-top: 20px;
 }
+
+/****************Comments****************/
+.comment {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #eee;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+
+    .comment.good-comment {
+        background-color: #D1F9C6;
+    }
+
+    .comment.bad-comment {
+        background-color: #FFEAEA;
+    }
+
+    .comment.admin-comment {
+        margin-left: 50px;
+    }
+
+    .comment .comment-text {
+        color: #666;
+    }
+
+    .comment .admin-bt {
+        margin-right: 20px;
+    }
+
+        .comment .admin-bt i {
+            font-size: 14px;
+            margin-right: 5px;
+        }
+
+    .add-comment-form .comment-bt {
+
+    }
+
+        .add-comment-form .comment-bt .radio-bt label {
+            margin-right: 10px;
+        }

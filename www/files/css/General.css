@@ -75,7 +75,8 @@ ul.list-items {
         }
 
         .form-container .form-field input.text-input,
-        .form-container .form-field select {
+        .form-container .form-field select,
+        .form-container .form-field textarea {
             width: 100%;
         }
 
