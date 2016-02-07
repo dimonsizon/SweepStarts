@@ -139,14 +139,17 @@ if($login) {
 	}
 
 	if ($page) {
-		if($page != 1) { $pervpage = "<a href=\"/transfer/?p=1\">««</a>"; }
-		if($page != $total) { $nextpage = " <a href=\"/transfer/?p=".$total."\">»»</a>"; }
+		if($page != 1) { $pervpage = "<a href=\"/transfer/?p=1\"><i class=\"fa fa-angle-left\"></i></a>"; }
+		if($page != $total) { $nextpage = " <a href=\"/transfer/?p=".$total."\"><i class=\"fa fa-angle-right\"></i></a>"; }
 		if($page - 2 > 0) { $page2left = " <a href=\"/transfer/?p=". ($page - 2) ."\">". ($page - 2) ."</a> "; }
 		if($page - 1 > 0) { $page1left = " <a href=\"/transfer/?p=". ($page - 1) ."\">". ($page - 1) ."</a> "; }
 		if($page + 2 <= $total) { $page2right = " <a href=\"/transfer/?p=". ($page + 2) ."\">". ($page + 2) ."</a> "; }
 		if($page + 1 <= $total) { $page1right = " <a href=\"/transfer/?p=". ($page + 1) ."\">". ($page + 1) ."</a> "; }
 	}
-	print "<div class=\"pages\"><b>".$lang['pages'].":  </b>".$pervpage.$page2left.$page1left." [<b>".$page."</b>] ".$page1right.$page2right.$nextpage."</div>";
+	if ($total != 1) {
+		print "<div class=\"pages\">".$pervpage.$page2left.$page1left." <b>".$page."</b> ".$page1right.$page2right.$nextpage."</div>";
+	}
+	
 
 	}
 

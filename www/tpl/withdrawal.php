@@ -131,13 +131,16 @@ defined('ACCESS') or die();
 	}
 
 	if ($p) {
-		if($p != 1) { $pervp = "<a href=\"/withdrawal/?p=". ($p - 1) ."\">««</a>"; }
-		if($p != $total) { $nextp = " <a href=\"/withdrawal/?p=". ($p + 1) ."\">»»</a>"; }
+		if($p != 1) { $pervp = "<a href=\"/withdrawal/?p=". ($p - 1) ."\"><i class=\"fa fa-angle-left\"></i></a>"; }
+		if($p != $total) { $nextp = " <a href=\"/withdrawal/?p=". ($p + 1) ."\"><i class=\"fa fa-angle-right\"></i></a>"; }
 		if($p - 2 > 0) { $p2left = " <a href=\"/withdrawal/?p=". ($p - 2) ."\">". ($p - 2) ."</a> "; }
 		if($p - 1 > 0) { $p1left = " <a href=\"/withdrawal/?p=". ($p - 1) ."\">". ($p - 1) ."</a> "; }
 		if($p + 2 <= $total) { $p2right = " <a href=\"/withdrawal/?p=". ($p + 2) ."\">". ($p + 2) ."</a> "; }
 		if($p + 1 <= $total) { $p1right = " <a href=\"/withdrawal/?p=". ($p + 1) ."\">". ($p + 1) ."</a> "; }
 	}
-	print "<div class=\"pages\"><b>".$lang['pages'].":  </b>".$pervp.$p2left.$p1left." <b>".$p."</b> ".$p1right.$p2right.$nextp."</div>";
+	if ($total != 1) {
+		print "<div class=\"pages\">".$pervp.$p2left.$p1left." <b>".$p."</b> ".$p1right.$p2right.$nextp."</div>";
+	}
+	
 ?>
 </div>
