@@ -160,7 +160,7 @@ if($_GET['act'] == "open") {
 			}
 			// Закончили с рефералами
 
-			print '<p class="erok">Депозит открыт! <a href="/deposits/">К списку депозитов »</a></p>';
+			print '<p class="erok">Вклад открыт! <a href="/deposits/">К списку ваших вкладов</a></p>';
 		}
 
 	} else {

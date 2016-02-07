@@ -55,7 +55,7 @@ if($ref) {
 			<?php if($login) { ?>
 				<span class=""><i class="fa fa-user"></i> <span><?php print $login;?></span></span>
 				<span class="balans">
-					<i class="fa fa-usd"></i> 
+					<i class="fa fa-rub"></i> 
 					<?php
 						if(cfgSET('cfgBonusBal') == "on") {
 							print "<span> ".$balance." ".$mycur."</span>

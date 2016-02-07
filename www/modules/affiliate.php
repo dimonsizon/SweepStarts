@@ -14,7 +14,7 @@ defined('ACCESS') or die();
 		$row2 			= mysql_fetch_array($get_user_info2);
 		 $uplogin	= $row2['login'];
 
-		print "<p>Upline: <b>".$uplogin."</b>; ".$lang['dohref'].": <b>$".$ref_money."</b></p>";
+		print "<p>Пригласитель: <b>".$uplogin."</b>; ".$lang['dohref'].": <b>".$ref_money." ".$moneycurr."</b></p>";
 
 	}
 ?>

@@ -114,17 +114,14 @@ if ($login) {
 
 							} else {
 
-								print '<FIELDSET style="border: solid #666666 1px; padding-top: 15px; margin-bottom: 10px;">
-								<LEGEND><b>'.$lang['payconf'].'</b></LEGEND>
-								<form method="POST" action="/enter/?conf='.$m_orderid.'">
+								print '<form method="POST" action="/enter/?conf='.$m_orderid.'">
 								<center>'.$lang['msg_02'].' <b>'.$sum.'</b> '.$rowps['abr'].' '.$lang['naschet'].' <b>'.$rowps['purse'].'</b> '.$lang['msg_01'].'<br />'.$rowps['comment'].'<br />'.$lang['msg_15'].' '.sprintf("%01.2f", $sum * $rowps['percent']).' '.$moneycurr.'<br /><br />
 
 								<input type="text" name="purse" size="20" />
 								<br /><br />
 								<p align="center"><input class="subm" type="submit" value="'.$lang['ipay'].'" /></p>
 								</center>
-								</form>
-								</FIELDSET>';
+								</form>';
 							}
 
 						} else {
