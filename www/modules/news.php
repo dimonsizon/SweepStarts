@@ -2,14 +2,24 @@
 defined('ACCESS') or die();
 
 function show_topics ($id, $subj, $msg, $date, $status) {
-	print "<h4 style=\"margin-top: 30px;\"><font color=\"#999999\">".$date."</font> | ".$subj."</h4>";
-
-	if ($status == 1 || $status == 2)
-	{
-		print " <a href=\"/admin/?p=edit_news&id=".$id."\"><img src=\"/admin/images/edit_ico.png\" width=\"12\" height=\"12\" border=\"0\" alt=\"Редактировать новость\" /></a> ";
-		print "<img style=\"cursor: hand;\" onclick=\"if(confirm('Вы уверены?')) top.location.href='/admin/del/news.php?id=".$id."'\";  width=\"12\" height=\"12\" border=\"0\" src=\"/admin/images/delite.png\" alt=\"Удалить новость\" />";
-	}
-	print "</p><p align=\"justify\">".$msg."</p><hr size=\"1\" color=\"#cccccc\" />";
+	print "<div class=\"news-container\">
+		<h3 class=\"news-header\">
+			<span>".$subj."</span>
+		</h3>
+		<p align=\"justify\">".$msg."</p>		
+		<div class=\"pull-right\">
+			<span class=\"admin-bt\">";
+				if ($status == 1 || $status == 2)
+				{
+					print " <a href=\"/admin/?p=edit_news&id=".$id."\">
+						<i class=\"fa fa-pencil\" title=\"Редактировать\"></i>
+					</a> ";
+					print "<a href=\"#\" onclick=\"if(confirm('Вы уверены?')) top.location.href='/admin/del/news.php?id=".$id."'\"><i class=\"fa fa-trash\" title=\"Удалить\"></i></a>";
+				}
+			print "</span> 
+			<span class=\"text-gray\">".$date."</span>
+		</div>
+	</div>";
 }
 
 function topics_list($p, $num, $status, $pages, $lang)

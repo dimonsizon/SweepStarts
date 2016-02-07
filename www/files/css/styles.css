@@ -417,3 +417,16 @@ input[type="radio"] {
         .add-comment-form .comment-bt .radio-bt label {
             margin-right: 10px;
         }
+
+/****************News******************/
+.news-container {
+    margin-top: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+}
+
+    .news-container .admin-bt i {
+        font-size: 14px;
+        margin-right: 5px;
+    }
