@@ -8,6 +8,7 @@ $action = htmlspecialchars(str_replace("'","",substr($_GET['action'],0,6)));
 		$subj		= htmlspecialchars(str_replace("'","",substr($_POST['subj'],0,100)), ENT_QUOTES, '');
 		$textform	= htmlspecialchars(str_replace("'","",substr($_POST['textform'],0,10240)), ENT_QUOTES, '');
 		$code		= md5(htmlspecialchars(str_replace("'","",substr($_POST['code'],0,5)), ENT_QUOTES, ''));
+		$emailsupport = 'support@sweepstarts.com';
 
 		if(!$mail) {
 				print "<p class=\"er\">Введите пожалуйста Ваш e-mail!</p>";
@@ -29,7 +30,8 @@ $action = htmlspecialchars(str_replace("'","",substr($_GET['action'],0,6)));
 			$headers .= "X-Sender: < http://".$cfgURL." >\n";
 			$headers .= "Content-Type: text/html; charset=windows-1251\n";
 
-			$send = mail($adminmail, $subj, $textform, $headers);
+			//$send = mail($adminmail, $subj, $textform, $headers);
+			$send = mail($emailsupport, $subj, $textform, $headers);
 
 			if(!$send) {
 				print "<p class=\"er\">Ошибка почтового сервера!<br />Приносим извинения за предоставленные неудобства.</p>";

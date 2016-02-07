@@ -118,6 +118,17 @@ ul.list-items {
     width: 400px;
 }
 
+.form-container.remember-form,
+.form-container.support-form {
+    margin: 0 auto;
+    width: 400px;
+}
+
+    .form-container.support-form .captcha input {
+        width: 330px;
+    }
+
+
 /***************enter-balance********************/
 
 .enter-balance .form-container {
