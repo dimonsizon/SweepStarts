@@ -70,8 +70,7 @@ if($ref) {
 			
 			<nav id="menu" class="nav-bar">
 				<ul>
-					<li><a href="/"><?php print $lang['homepage']; ?></a></li>
-					<li><a href="/rules"><?php print $lang['rules']; ?></a></li>
+					<li><a href="/"><?php print $lang['homepage']; ?></a></li>					
 					<li><a href="/news"><?php print $lang['news']; ?></a></li>
 					<li><a href="/reviews"><?php print $lang['reviews']; ?></a></li>
 					<li><a href="/support"><?php print $lang['contacts']; ?></a></li>
@@ -114,6 +113,14 @@ if($ref) {
 	<div class="container">
 		<div class="pull-left">
 		&copy; <?php print date("Y"); ?> <a href="#" target="_blank">SWEEPSTARTS</a> Краудфандинговая платформа 
+		<nav class="nav-footer">
+			<ul>
+				<li><a href="/rules"><?php print $lang['rules']; ?></a></li>					
+				<li><a href="/news"><?php print $lang['news']; ?></a></li>
+				<li><a href="/reviews"><?php print $lang['reviews']; ?></a></li>
+				<li><a href="/support"><?php print $lang['contacts']; ?></a></li>
+			</ul>
+		</nav>
 		</div>	
 		<div class="pull-right">		
 			<div class="languages-block">

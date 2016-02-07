@@ -93,3 +93,18 @@
             color: #02b2ff;
             text-align: center;
         }
+
+/*************Footer nav**************/
+
+.nav-footer {
+
+}
+
+    .nav-footer ul {
+        
+    }
+
+        .nav-footer ul li {
+            padding: 5px 15px 5px 0;
+            display: inline-block
+        }
