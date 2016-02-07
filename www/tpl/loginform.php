@@ -120,13 +120,13 @@ if(!$login) {
 		if(cfgSET('cfgTrans') == "on") {
 			print '<li class="menu-item"><a href="/transfer">'.$lang['transfer'].'</a></li>';
 		}
-		print '<li class="menu-item"><a href="/withdrawal"><i class="fa fa-arrow-up"></i>'.$lang['withdrawal'].'</a></li>';
+		print '<li class="menu-item"><a href="/withdrawal"><i class="fa fa-arrow-up"></i>'.$lang['withdrawal'].'</a></li>';		
+		print '<li class="menu-item"><a href="/affiliate"><i class="fa fa-users"></i>'.$lang['affiliate'].'</a></li>';
+		print '<li class="menu-item"><a href="/statistics"><i class="fa fa-bar-chart"></i>'.$lang['stat'].'</a></li>';
 		print '<li class="menu-item"><a href="/msg"><i class="fa fa-comments-o"></i>'.$lang['msgs'].'</a> <b>'; 
 			if($newmsgs!=0) { 
 				print '+'.$newmsgs;
-			} print '</b></li>';
-		print '<li class="menu-item"><a href="/affiliate"><i class="fa fa-users"></i>'.$lang['affiliate'].'</a></li>';
-		print '<li class="menu-item"><a href="/statistics"><i class="fa fa-bar-chart"></i>'.$lang['stat'].'</a></li>';
+			} print '</b></li>';		
 		print '<li class="menu-item"><a href="/profile"><i class="fa fa-user"></i>'.$lang['profile'].'</a></li>';
 		print '<li class="menu-item"><a href="/logout.php"><i class="fa fa-sign-out"></i>'.$lang['exit'].'</a></li>';
 	print '</ul></nav>';
