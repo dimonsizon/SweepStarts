@@ -63,7 +63,7 @@ defined('ACCESS') or die();
 					<label>
 						<input class="check" type="checkbox" name="yes" value="1" /> 
 						<b>
-							<a href="/rules/" target="_blank"><?php print $lang['rules']; ?></a> 
+							<a href="/terms/" target="_blank"><?php print $lang['terms']; ?></a> 
 							<?php print $lang['rulesyes']; ?>
 						</b>
 						<span class="required"><b>*</b></font>

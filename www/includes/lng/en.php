@@ -1,6 +1,7 @@
 <?php
 $lang['homepage']		= "Home";
 $lang['rules']			= "Rules";
+$lang['terms']			= "Rules";
 $lang['news']			= "News";
 $lang['reviews']		= "Reviews";
 $lang['contacts']		= "Contact Us";
