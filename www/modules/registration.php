@@ -36,7 +36,7 @@ if($_GET['action'] == "save") {
 				$row			= mysql_fetch_array($get_user_info);
 				$ref_id			= intval($row['id']);
 			} else { 
-				$ref_id = 0; 
+				$ref_id = 1; //admin id
 			}
 
 			if(cfgSET('cfgMailConf') == "on") {
